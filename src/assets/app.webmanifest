@@ -1,0 +1,11 @@
+{
+  "categories": [],
+  "icons": [
+    {
+      "src": "maskable_icon.png",
+      "sizes": "787x787",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+@use "../../styles/variables" as var;
+
+.mainNavigation {
+  position: absolute;
+  top: 0;
+  color: var.$color;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+  }
+
+  .logo {
+    padding: 0.5rem 1.5rem;
+    display: block;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+  }
+
+  .menuButton {
+    border: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    color: inherit;
+    background-color: var.$primary-color;
+    padding: 0.75rem;
+    height: 3rem;
+    width: 3rem;
+    box-shadow: var.$shadow;
+    transition: all 0.25s ease-in-out;
+    z-index: 97;
+
+    &:hover {
+      background-color: darken(var.$primary-color, 5%);
+      box-shadow: 0 0 1px 1px var.$shadow-color;
+    }
+
+    line {
+      transition: all 0.25s ease-in-out;
+      transform-origin: center;
+    }
+
+    &.open {
+      line:nth-child(1) {
+        opacity: 0;
+      }
+      line:nth-child(2) {
+        transform: rotate(45deg) translate(0, 25%);
+      }
+      line:nth-child(3) {
+        transform: rotate(-45deg) translate(0, -25%);
+      }
+    }
+  }
+
+  .menuLinks {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    overflow-y: auto;
+    font-size: 1.25rem;
+    list-style: none;
+    transition: opacity 0.25s, visibility 0.25s 0.25s;
+
+    &.open {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .menuLink {
+      margin: 1rem auto;
+      text-align: center;
+      cursor: pointer;
+      background-color: var.$primary-color;
+      border-radius: 1rem;
+      box-shadow: var.$shadow;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        background-color: darken(var.$primary-color, 5%);
+        box-shadow: 0 0 1px 1px var.$shadow-color;
+      }
+
+      a {
+        display: block;
+        padding: 1rem 2.5rem;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

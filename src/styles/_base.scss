@@ -1,0 +1,36 @@
+@use 'variables' as var;
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: lighten(var.$secondary-color, 20%) solid 5px;
+}
+
+body {
+  min-height: 100vh;
+  background: var.$background-color;
+  font: var.$font-size/var.$line-height var.$font-family;
+}
+
+a#skip {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  transition: left 0.5s ease-in-out;
+  padding: 1.5rem 2.5rem;
+  text-decoration: none;
+  font-size: 1.125rem;
+  color: var.$primary-color;
+  background-color: var.$background-color;
+  z-index: 99;
+
+  &:focus {
+    left: 0;
+  }
+}

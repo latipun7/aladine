@@ -1,0 +1,97 @@
+# https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# Workflows commands (::set-output, etc): # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter
+
+name: Test, Build, and Deploy ⚙⚛✨🚀
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  test_build:
+    name: Test and Build ⚙⚛
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x, 14.x]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.4
+
+      - name: Use NodeJS ${{ matrix.node }} 📦
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get Yarn Cache Directory Path 🐈
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache Directories 🧶
+        uses: actions/cache@v2.1.5
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ${{ github.workspace }}/node_modules/.cache
+          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install Dependencies ✨
+        run: yarn install --frozen-lockfile --check-files
+
+      - name: Run Linter 👨🏻‍💻
+        run: yarn lint && yarn type-check
+
+      - name: Run Formatter 💅
+        run: yarn format
+
+      - name: Run Test 🛠
+        run: yarn test
+
+      - name: Run Build ⚙
+        run: yarn build
+
+      - name: Cache build ready to deploy 🚀
+        uses: actions/cache@v2.1.5
+        with:
+          path: |
+            ./dist
+          key: ${{ github.sha }}-${{ runner.os }}-${{ matrix.node-version }}
+
+  deploy:
+    name: Deploy to production ✨🚀
+
+    needs: test_build
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [14.x]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.4
+
+      - name: Restore build cache ♻️
+        uses: actions/cache@v2.1.5
+        with:
+          path: |
+            ./dist
+          key: ${{ github.sha }}-${{ runner.os }}-${{ matrix.node-version }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: dist
+          clean: true

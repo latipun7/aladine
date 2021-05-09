@@ -72,9 +72,14 @@ const Menu: VFC<Props> = () => {
             </NavLink>
           </li>
           <li className={styles.menuLink}>
-            <NavLink to="/about" onClick={handleClickMenuLink}>
+            <a
+              href="https://github.com/latipun7"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleClickMenuLink}
+            >
               About Us
-            </NavLink>
+            </a>
           </li>
         </ul>
       </nav>

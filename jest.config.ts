@@ -1,15 +1,13 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-/**
- * @type {import('./tsconfig.json')}
- */
-const { compilerOptions } = require('./tsconfig.json');
+import { pathsToModuleNameMapper } from 'ts-jest/utils';
+import type { Config } from '@jest/types';
+
+import { compilerOptions } from './tsconfig.json';
 
 const tsconfigPaths = pathsToModuleNameMapper(compilerOptions.paths, {
   prefix: '<rootDir>/',
 });
 
-/** @type {import('@jest/types').Config.InitialOptions} */
-module.exports = {
+const config: Config.InitialOptions = {
   preset: 'ts-jest',
   verbose: true,
   setupFilesAfterEnv: ['<rootDir>/tests/test.setup.ts'],
@@ -31,3 +29,5 @@ module.exports = {
     'ts-jest': {},
   },
 };
+
+export default config;

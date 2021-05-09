@@ -39,6 +39,7 @@
     "configs/**/*",
     "typings/**/*",
     "tests/**/*",
+    "jest.config.ts",
     "webpack.config.ts"
   ]
 }

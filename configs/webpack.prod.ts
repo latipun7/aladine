@@ -3,13 +3,29 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import cssnano from 'cssnano';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import svgToMiniDataURI from 'mini-svg-data-uri';
 import postcssPresetEnv from 'postcss-preset-env';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { EnvironmentPlugin } from 'webpack';
 import type { Configuration } from 'webpack';
 
 import { buildDir, srcDir } from './paths';
+
+const babelLoader = {
+  loader: 'babel-loader',
+  options: {
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          useBuiltIns: 'usage',
+          corejs: 3.12,
+        },
+      ],
+      ['@babel/preset-react', { runtime: 'automatic' }],
+      ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
+    ],
+  },
+};
 
 const prod = async (): Promise<Configuration> => ({
   mode: 'production',
@@ -19,7 +35,7 @@ const prod = async (): Promise<Configuration> => ({
   output: {
     path: buildDir,
     filename: 'scripts/[name]-[contenthash:8].js',
-    publicPath: '/react-webpack-ts/', // NOTE: for github page. Remove if using custom domain.
+    publicPath: '/aladine/',
   },
   optimization: {
     minimize: true,
@@ -45,29 +61,18 @@ const prod = async (): Promise<Configuration> => ({
       {
         test: /\.tsx?$/,
         include: [srcDir],
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                useBuiltIns: 'usage',
-                corejs: 3.12,
-              },
-            ],
-            ['@babel/preset-react', { runtime: 'automatic' }],
-            ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
-          ],
-        },
+        use: [babelLoader],
       },
       {
         test: /\.svg$/i,
         use: [
+          babelLoader,
           {
-            loader: 'url-loader',
+            loader: '@svgr/webpack',
             options: {
-              generator: (content: string) =>
-                svgToMiniDataURI(content.toString()),
+              babel: false,
+              filenameCase: 'kebab',
+              svgoConfig: { plugins: [{ removeViewBox: false }] },
             },
           },
         ],

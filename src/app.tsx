@@ -9,7 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 const App: FC = () => {
   return (
-    <BrowserRouter basename={isProduction ? '/react-webpack-ts' : '/'}>
+    <BrowserRouter basename={isProduction ? '/aladine' : '/'}>
       <header>
         <Menu />
         <Route exact path="/" component={Hero} />

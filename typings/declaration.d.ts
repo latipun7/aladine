@@ -14,6 +14,11 @@ declare namespace NodeJS {
   }
 }
 
+declare module '*.svg' {
+  const svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  export = svg;
+}
+
 declare module '*.png' {
   const content: ResponsiveImageOutput;
   export = content;
@@ -43,5 +48,3 @@ declare module '*.bmp' {
   const content: ResponsiveImageOutput;
   export = content;
 }
-
-declare module '*.svg';

@@ -1,11 +1,21 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import svgToMiniDataURI from 'mini-svg-data-uri';
 import postcssPresetEnv from 'postcss-preset-env';
 import type { Configuration } from 'webpack';
 
 import { buildDir, srcDir, resolvePath } from './paths';
+
+const babelLoader = {
+  loader: 'babel-loader',
+  options: {
+    presets: [
+      ['@babel/preset-react', { runtime: 'automatic' }],
+      ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
+    ],
+    plugins: ['react-refresh/babel'],
+  },
+};
 
 const dev = async (): Promise<Configuration> => ({
   mode: 'development',
@@ -36,23 +46,18 @@ const dev = async (): Promise<Configuration> => ({
       {
         test: /\.tsx?$/,
         include: [srcDir],
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['@babel/preset-react', { runtime: 'automatic' }],
-            ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
-          ],
-          plugins: ['react-refresh/babel'],
-        },
+        use: [babelLoader],
       },
       {
         test: /\.svg$/i,
         use: [
+          babelLoader,
           {
-            loader: 'url-loader',
+            loader: '@svgr/webpack',
             options: {
-              generator: (content: string) =>
-                svgToMiniDataURI(content.toString()),
+              babel: false,
+              filenameCase: 'kebab',
+              svgoConfig: { plugins: [{ removeViewBox: false }] },
             },
           },
         ],

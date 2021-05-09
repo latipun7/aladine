@@ -16,6 +16,7 @@
     padding: 0.5rem 1.5rem;
     display: block;
     font: 2rem var.$headline-font-family;
+    color: invert(var.$color);
     font-weight: bolder;
     text-align: center;
   }

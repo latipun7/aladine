@@ -5370,14 +5370,6 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-loader@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.npmjs.org/file-loader/-/file-loader-6.2.0.tgz"
-  integrity "sha1-uu98+OGEDfMl5DkLRISHlIDuvk0= sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw=="
-  dependencies:
-    loader-utils "^2.0.0"
-    schema-utils "^3.0.0"
-
 file-type@^3.1.0, file-type@^3.8.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
@@ -7804,11 +7796,6 @@ mini-css-extract-plugin@^1.6.0:
     schema-utils "^3.0.0"
     webpack-sources "^1.1.0"
 
-mini-svg-data-uri@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.2.3.tgz"
-  integrity "sha1-4Wuqkq1V3aocLBNXWRKfQZELw58= sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ=="
-
 minimalistic-assert@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz"
@@ -9939,11 +9926,12 @@ resolve@^2.0.0-next.3:
     is-core-module "^2.2.0"
     path-parse "^1.0.6"
 
-responsive-loader@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.npmjs.org/responsive-loader/-/responsive-loader-2.3.0.tgz"
-  integrity "sha1-MSO22x3Yru43xNeAXj9F0uj17cE= sha512-8GyyasTKdOfTMDvYy/mBpyV2EM7hz7zWoKdxpocA60eX1jM2udsb+ji03haZWeGnTkQvOplXVqHsev9952dWng=="
+responsive-loader@^3.0.0-2:
+  version "3.0.0-2"
+  resolved "https://registry.yarnpkg.com/responsive-loader/-/responsive-loader-3.0.0-2.tgz#fb8c30569c43452f465813f0efaf85daf82aa9c8"
+  integrity sha512-M1B+BWYlbWfOLhRF7dr47dvv1Q2Wj+o4bh+y8+cJutq/HoQvMexAKZs4TGEMZGTd2t+/9A3cw9A3DYbIvQOtjg==
   dependencies:
+    find-cache-dir "^3.3.1"
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
@@ -11398,15 +11386,6 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
-
-url-loader@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/url-loader/-/url-loader-4.1.1.tgz"
-  integrity "sha1-KFBekFyuFYzwfJLKYi1/I35wpOI= sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA=="
-  dependencies:
-    loader-utils "^2.0.0"
-    mime-types "^2.1.27"
-    schema-utils "^3.0.0"
 
 url-parse@^1.4.3:
   version "1.4.7"

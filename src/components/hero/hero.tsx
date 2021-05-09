@@ -8,8 +8,10 @@ import styles from './hero.module.scss';
 const Hero: VFC = () => {
   return (
     <div className={styles.hero}>
-      <Lamp width="25%" height="25%" className={styles.lamp} />
-      <Lemonade width="25%" height="25%" className={styles.lemonade} />
+      <div className={styles.readyToPour}>
+        <Lamp className={styles.lamp} />
+        <Lemonade className={styles.lemonade} />
+      </div>
       <h1>dine away the easy way 😋</h1>
       <Eating width="90%" height="60%" />
     </div>

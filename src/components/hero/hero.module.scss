@@ -16,6 +16,7 @@
   flex-flow: column;
   justify-content: flex-end;
   align-items: center;
+  background: no-repeat bottom/cover url(../../assets/hero-image_3.jpg?size=320);
 
   h1 {
     position: absolute;
@@ -24,20 +25,27 @@
     transform: translateX(-50%);
     font: 1.5rem/1 var.$headline-font-family;
     width: 90%;
-    color: var.$color;
+    color: invert(var.$color);
     text-align: center;
   }
 
-  .lamp {
+  .readyToPour {
     position: absolute;
-    top: 20%;
-    left: 30%;
-    animation: 1s infinite alternate pour;
-  }
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    width: 33%;
+    max-height: 45vh;
 
-  .lemonade {
-    position: absolute;
-    top: 35%;
-    left: 40%;
+    .lamp {
+      width: 80%;
+      margin-bottom: 1rem;
+      animation: 1s infinite alternate pour;
+    }
+
+    .lemonade {
+      width: 80%;
+      align-self: flex-end;
+    }
   }
 }

@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /scripts/
-Disallow: /styles/
 Disallow: /report.html

@@ -37,7 +37,7 @@ const dev = async (): Promise<Configuration> => ({
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
+      filename: '[name].css',
     }),
     new ReactRefreshWebpackPlugin(),
   ],
@@ -57,22 +57,23 @@ const dev = async (): Promise<Configuration> => ({
             options: {
               babel: false,
               filenameCase: 'kebab',
-              svgoConfig: { plugins: [{ removeViewBox: false }] },
+              svgoConfig: {
+                plugins: [{ removeViewBox: false, removeDimensions: true }],
+              },
             },
           },
         ],
       },
       {
         test: /\.(png|jpe?g|webp|gif|bmp)$/i,
-        loader: 'url-loader',
+        loader: 'responsive-loader',
         options: {
-          limit: 8192,
-          fallback: require.resolve('responsive-loader'),
-          name: 'assets/images/[name]-[width].[ext]',
+          name: 'assets/[name]-[width].[ext]',
           adapter: (await import('responsive-loader/sharp')).default,
           sizes: [320, 640, 960, 1200, 1800, 2400],
           placeholder: true,
           esModule: true,
+          format: 'webp',
         },
       },
       {

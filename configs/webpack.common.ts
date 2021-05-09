@@ -38,7 +38,7 @@ const common: Configuration = {
       cache: false,
     }),
     new FaviconsWebpackPlugin({
-      logo: resolvePath('src', 'assets', 'logo-icons.svg'),
+      logo: resolvePath('src', 'assets', 'lamp.svg'),
       prefix: 'assets/',
       inject: true,
       manifest: resolvePath('src', 'assets', 'app.webmanifest'),

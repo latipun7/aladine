@@ -64,7 +64,7 @@
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^2.0.0",
     "cssnano": "^5.0.2",
-    "eslint": "^7.25.0",
+    "eslint": "^7.26.0",
     "eslint-config-ruppy-jest": "^1.0.0",
     "eslint-config-ruppy-node": "^1.5.1",
     "eslint-config-ruppy-react": "^1.8.0",

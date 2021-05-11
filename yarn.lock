@@ -9288,7 +9288,7 @@ postcss@^8.2.1, postcss@^8.2.10, postcss@^8.2.9:
     nanoid "^3.1.22"
     source-map "^0.6.1"
 
-prebuild-install@^6.0.1, prebuild-install@^6.1.1:
+prebuild-install@^6.0.1, prebuild-install@^6.1.2:
   version "6.1.2"
   resolved "https://registry.npmjs.org/prebuild-install/-/prebuild-install-6.1.2.tgz"
   integrity "sha1-bOX8WXj+ul08v/7coGgrE2oLW/8= sha512-PzYWIKZeP+967WuKYXlTOhYBgGOvTRSfaKI89XnfJ0ansRAH7hDU45X+K+FZeI1Wb/7p/NnuctPH3g0IqKUuSQ=="
@@ -10147,7 +10147,7 @@ semver@7.0.0:
   resolved "https://registry.npmjs.org/semver/-/semver-7.0.0.tgz"
   integrity "sha1-XzyjV2HkfgWyBsba/yz4FPAxa44= sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A=="
 
-semver@7.x, semver@^7.3.4, semver@^7.3.5:
+semver@7.x, semver@^7.2.1, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5:
   version "7.3.5"
   resolved "https://registry.npmjs.org/semver/-/semver-7.3.5.tgz"
   integrity "sha1-C2Ich5NI2JmOSw5L6Us/EuYBjvc= sha512-PoeGJYh8HK4BTO/a9Tf6ZG3veo/A7ZVsYrSA6J8ny9nb3B1VrpkuN+z9OE5wfE5p6H4LchYZsegiQgbJD94ZFQ=="
@@ -10158,11 +10158,6 @@ semver@^6.0.0, semver@^6.1.0, semver@^6.1.1, semver@^6.1.2, semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"
   integrity "sha1-7gpkyK9ejO6mdoexM3YeG+y9HT0= sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw=="
-
-semver@^7.2.1, semver@^7.3.2:
-  version "7.3.2"
-  resolved "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz"
-  integrity "sha1-YElisFK4HtB4aq6EOJ/7pw/9OTg= sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ=="
 
 send@0.17.1:
   version "0.17.1"
@@ -10261,15 +10256,15 @@ sharp@^0.27.1:
     tar-fs "^2.1.1"
     tunnel-agent "^0.6.0"
 
-sharp@^0.28.1:
-  version "0.28.1"
-  resolved "https://registry.npmjs.org/sharp/-/sharp-0.28.1.tgz"
-  integrity "sha1-nXu84cqVssJ0giQ81IOcYu9AsLc= sha512-4mCGMEN4ntaVuFGwHx7FvkJQkIgbI+S+F9a3bI7ugdvKjPr4sF7/ibvlRKhJyzhoQi+ODM+XYY1de8xs7MHbfA=="
+sharp@^0.28.2:
+  version "0.28.2"
+  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.28.2.tgz#31c6ebdf8ddb9b4ca3e30179e3f4a73f0c7474e4"
+  integrity sha512-CdmySbsQVe/+ZM2j9zzvUfWumM0L0iHj1kpxJMFuyWvSuBULebvGCdOLb1f5vbbBrIGroX714Fx1wiWaKniz4A==
   dependencies:
     color "^3.1.3"
     detect-libc "^1.0.3"
     node-addon-api "^3.1.0"
-    prebuild-install "^6.1.1"
+    prebuild-install "^6.1.2"
     semver "^7.3.5"
     simple-get "^3.1.0"
     tar-fs "^2.1.1"

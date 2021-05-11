@@ -1,0 +1,31 @@
+@use '../../styles/variables' as var;
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.7);
+  }
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 2rem;
+  text-align: center;
+
+  .copyright {
+    font: 1.1rem/1 var.$headline-font-family;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    vertical-align: middle;
+    color: hsl(0, 100%, 39%);
+
+    svg {
+      animation: pulse 0.3s alternate infinite;
+    }
+  }
+}

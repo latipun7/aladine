@@ -1,9 +1,11 @@
+@use '../variables' as var;
+
 main {
-  h1 {
+  h2 {
     text-align: center;
     padding: 1rem;
     margin: 1rem auto;
-    font-size: 1.5rem;
+    font: 1.5rem/1 var.$headline-font-family;
   }
 
   .gridContainer {

@@ -1,0 +1,31 @@
+@use '../../styles/variables' as var;
+
+.scrollButton {
+  border: none;
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  border-radius: 50%;
+  color: hsl(38, 45%, 92%);
+  background-color: var.$secondary-color;
+  padding: 0.75rem;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: var.$shadow;
+  transition: visibility 0.25s 0.25s ease-in-out,
+    opacity 0.25s 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
+  z-index: 95;
+  visibility: hidden;
+  opacity: 0;
+
+  &.scrolled {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:hover {
+    background-color: darken(var.$secondary-color, 5%);
+    box-shadow: 0 0 1px 1px var.$shadow-color;
+  }
+}

@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Footer from 'components/footer';
 import Menu from 'components/menu';
 import Hero from 'components/hero';
+import ScrollToTop from 'components/scroll-to-top';
 import Index from 'pages/index';
 import type { FC } from 'react';
 
@@ -19,6 +20,7 @@ const App: FC = () => {
           <Route exact path="/" component={Index} />
         </Switch>
       </main>
+      <ScrollToTop />
       <Footer />
     </BrowserRouter>
   );

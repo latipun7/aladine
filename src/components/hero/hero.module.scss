@@ -47,5 +47,68 @@
       width: 80%;
       align-self: flex-end;
     }
+
+    @media screen and (min-width: 23.5em) {
+      & {
+        width: 25%;
+      }
+    }
+
+    @media screen and (min-width: 35em) {
+      & {
+        width: 20%;
+      }
+    }
+
+    @media screen and (min-width: 48em) {
+      & {
+        width: 15%;
+      }
+    }
+  }
+
+  & > svg {
+    width: 90%;
+    height: 60%;
+  }
+
+  @media screen and (min-width: 64em) {
+    & {
+      display: grid;
+      grid-template-columns: 35% 1fr;
+      grid-template-rows: 4.5rem 25% 1fr;
+      grid-template-areas:
+        ". ."
+        "title image"
+        "pour image";
+      justify-items: center;
+
+      h1 {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        font-size: 2.5rem;
+        grid-area: title;
+        align-self: end;
+        margin: 0 0 1rem 15%;
+        text-align: left;
+        width: auto;
+      }
+
+      .readyToPour {
+        position: relative;
+        top: auto;
+        width: auto;
+        grid-area: pour;
+        align-self: start;
+        margin-top: 3rem;
+      }
+
+      & > svg {
+        grid-area: image;
+        height: auto;
+      }
+    }
   }
 }

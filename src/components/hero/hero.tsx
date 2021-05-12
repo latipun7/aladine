@@ -13,7 +13,7 @@ const Hero: VFC = () => {
         <Lemonade className={styles.lemonade} />
       </div>
       <h1>dine away the easy way 😋</h1>
-      <Eating width="90%" height="60%" />
+      <Eating />
     </div>
   );
 };

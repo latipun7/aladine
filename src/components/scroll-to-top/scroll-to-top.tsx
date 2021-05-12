@@ -1,20 +1,34 @@
 import { createRef, useEffect } from 'react';
 import { FiArrowUp } from 'react-icons/fi';
+import useQuerySelector from 'lib/use-query-selector';
 import type { VFC } from 'react';
 
-import style from './scroll-to-top.module.scss';
+import styles from './scroll-to-top.module.scss';
 
 const ScrollToTop: VFC = () => {
   const buttonElement = createRef<HTMLButtonElement>();
+  const footerElement = useQuerySelector('footer');
 
   const scrollEvent = () => {
     const scrollPosition = window.scrollY;
 
     if (buttonElement.current) {
       if (scrollPosition > 354) {
-        buttonElement.current.classList.add(`${style.scrolled}`);
+        buttonElement.current.classList.add(`${styles.scrolled}`);
       } else {
-        buttonElement.current.classList.remove(`${style.scrolled}`);
+        buttonElement.current.classList.remove(`${styles.scrolled}`);
+      }
+
+      if (footerElement.current) {
+        const footerHeight =
+          footerElement.current.getBoundingClientRect().height;
+        const footerTopBounding = document.body.offsetHeight - footerHeight;
+
+        if (window.innerHeight + scrollPosition >= footerTopBounding) {
+          buttonElement.current.classList.add(`${styles.bottom}`);
+        } else {
+          buttonElement.current.classList.remove(`${styles.bottom}`);
+        }
       }
     }
   };
@@ -31,7 +45,7 @@ const ScrollToTop: VFC = () => {
 
   return (
     <button
-      className={style.scrollButton}
+      className={styles.scrollButton}
       onClick={handleScrollToTop}
       ref={buttonElement}
     >

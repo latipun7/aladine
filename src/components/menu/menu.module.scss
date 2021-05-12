@@ -33,6 +33,10 @@
     transition: all 0.25s ease-in-out;
     z-index: 97;
 
+    &.bottom {
+      bottom: 9rem;
+    }
+
     &:hover {
       background-color: darken(var.$primary-color, 5%);
       box-shadow: 0 0 1px 1px var.$shadow-color;

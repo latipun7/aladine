@@ -14,7 +14,7 @@
   box-shadow: var.$shadow;
   transition: visibility 0.25s 0.25s ease-in-out,
     opacity 0.25s 0.25s ease-in-out, background-color 0.25s ease-in-out,
-    box-shadow 0.25s ease-in-out;
+    box-shadow 0.25s ease-in-out, bottom 0.25s ease-in-out;
   z-index: 95;
   visibility: hidden;
   opacity: 0;
@@ -22,6 +22,10 @@
   &.scrolled {
     visibility: visible;
     opacity: 1;
+  }
+
+  &.bottom {
+    bottom: 13rem;
   }
 
   &:hover {

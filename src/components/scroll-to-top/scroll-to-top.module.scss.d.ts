@@ -1,4 +1,5 @@
 export type Styles = {
+  bottom: string;
   scrollButton: string;
   scrolled: string;
 };

@@ -20,7 +20,8 @@
       "components/*": ["src/components/*"],
       "lib/*": ["src/lib/*"],
       "pages/*": ["src/pages/*"],
-      "styles/*": ["src/styles/*"]
+      "styles/*": ["src/styles/*"],
+      "test.utils": ["tests/test.utils.tsx"]
     },
     "typeRoots": ["./node_modules/@types", "./typings"],
 
@@ -39,7 +40,6 @@
     "configs/**/*",
     "typings/**/*",
     "tests/**/*",
-    "jest.config.ts",
-    "webpack.config.ts"
+    "**/*.config.ts"
   ]
 }

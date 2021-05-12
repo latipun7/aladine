@@ -46,7 +46,7 @@ jobs:
         run: yarn install --frozen-lockfile --check-files
 
       - name: Run Linter 👨🏻‍💻
-        run: yarn lint && yarn type-check
+        run: yarn type-check && yarn lint
 
       - name: Run Formatter 💅
         run: yarn format
@@ -90,7 +90,7 @@ jobs:
           key: ${{ github.sha }}-${{ runner.os }}-${{ matrix.node-version }}
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages
           folder: dist

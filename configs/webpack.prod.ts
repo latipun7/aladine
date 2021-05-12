@@ -122,7 +122,7 @@ const prod = async (): Promise<Configuration> => ({
                   }),
                   purgeCss({
                     content: ['{public,src}/**/*.{js,jsx,ts,tsx,html,scss}'],
-                    defaultExtractor: (content) =>
+                    defaultExtractor: (content: string) =>
                       content.match(/[\w-/:]+(?<!:)/g) || [],
                   }),
                 ],

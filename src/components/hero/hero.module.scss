@@ -60,7 +60,7 @@
       }
     }
 
-    @media screen and (min-width: 48em) {
+    @media #{var.$screen-tablet} {
       & {
         width: 15%;
       }

@@ -11,6 +11,7 @@ interface Props {}
 
 const Menu: VFC<Props> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navElement = createRef<HTMLElement>();
   const menuLinksElement = createRef<HTMLUListElement>();
   const menuButtonElement = createRef<HTMLButtonElement>();
   const footerElement = useQuerySelector('footer');
@@ -28,6 +29,12 @@ const Menu: VFC<Props> = () => {
     const scrollPosition = window.scrollY;
 
     if (menuButtonElement.current) {
+      if (scrollPosition > 99) {
+        navElement.current?.classList.add(`${styles.scrolled}`);
+      } else {
+        navElement.current?.classList.remove(`${styles.scrolled}`);
+      }
+
       if (footerElement.current) {
         const footerHeight =
           footerElement.current.getBoundingClientRect().height;
@@ -70,7 +77,7 @@ const Menu: VFC<Props> = () => {
 
   return (
     <>
-      <nav className={styles.mainNavigation}>
+      <nav className={styles.mainNavigation} ref={navElement}>
         <a href="/" className={styles.logo}>
           <span>à la Dine</span>
         </a>

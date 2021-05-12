@@ -6,6 +6,7 @@ export type Styles = {
   menuLink: string;
   menuLinks: string;
   open: string;
+  scrolled: string;
 };
 
 export type ClassNames = keyof Styles;

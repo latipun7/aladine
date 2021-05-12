@@ -22,11 +22,16 @@
 }
 
 body {
-  min-height: 100vh;
-  min-width: 19rem;
   background: var.$background-color;
   font: var.$font-size #{"/"} var.$line-height var.$font-family;
   color: var.$color;
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 19rem;
+  }
 
   a {
     @extend %link;
@@ -47,10 +52,16 @@ body {
     }
   }
 
+  header {
+    min-height: 5.5rem;
+    height: auto;
+  }
+
   main {
     width: 90%;
     max-width: 65rem;
     margin: 1rem auto;
+    flex-grow: 1;
 
     a {
       @extend %link;
@@ -70,5 +81,31 @@ body {
   .icon {
     vertical-align: middle;
     margin: 0 0.25rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.625rem;
+  background-color: var.$background-color;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darken(var.$background-color, 10%);
+  border-radius: 15px;
+  box-shadow: inset 0px 1px 3px 0px var.$shadow-color;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: var.$secondary-color;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 25%),
+    inset -2px -2px 2px hsla(0, 0, 0, 25%);
+
+  &:hover {
+    background-color: lighten(var.$secondary-color, 5%);
+  }
+
+  &:active {
+    background-color: lighten(var.$secondary-color, 10%);
   }
 }

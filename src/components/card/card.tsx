@@ -1,5 +1,5 @@
 import { createRef, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaStar, FaRegStar, FaMapMarkerAlt } from 'react-icons/fa';
 import { truncateWords } from 'lib/utils';
 import type { VFC } from 'react';
@@ -40,7 +40,7 @@ const Card: VFC<Props> = ({ data }) => {
         {data.city}
       </div>
       <div className={styles.title}>
-        <NavLink to={`/restaurant/${data.id}`}>{data.name}</NavLink>
+        <Link to={`/restaurant/${data.id}`}>{data.name}</Link>
       </div>
       <div
         className={styles.rating}

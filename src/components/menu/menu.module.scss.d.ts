@@ -1,4 +1,5 @@
 export type Styles = {
+  active: string;
   bottom: string;
   logo: string;
   mainNavigation: string;

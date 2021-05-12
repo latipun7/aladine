@@ -92,12 +92,21 @@ const Menu: VFC<Props> = () => {
 
         <ul className={menuLinksClassNames} ref={menuLinksElement}>
           <li className={styles.menuLink}>
-            <NavLink to="/" onClick={handleClickMenuLink}>
+            <NavLink
+              exact
+              to="/"
+              onClick={handleClickMenuLink}
+              activeClassName={styles.active}
+            >
               Home
             </NavLink>
           </li>
           <li className={styles.menuLink}>
-            <NavLink to="/favorite" onClick={handleClickMenuLink}>
+            <NavLink
+              to="/favorite"
+              onClick={handleClickMenuLink}
+              activeClassName={styles.active}
+            >
               Favorite
             </NavLink>
           </li>

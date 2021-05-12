@@ -49,7 +49,10 @@ const prod = async (): Promise<Configuration> => ({
       NODE_ENV: 'production',
     }),
     new ForkTsCheckerWebpackPlugin({
-      eslint: { files: './src/**/*.{ts,tsx,js,jsx}', options: { cache: true } },
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}',
+        options: { cache: false },
+      },
     }),
     new MiniCssExtractPlugin({
       filename: '[name]-[contenthash:8].css',

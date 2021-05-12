@@ -72,7 +72,7 @@
     height: 60%;
   }
 
-  @media screen and (min-width: 64em) {
+  @media #{var.$screen-laptop} {
     & {
       display: grid;
       grid-template-columns: 35% 1fr;

@@ -32,4 +32,14 @@
     background-color: darken(var.$secondary-color, 5%);
     box-shadow: 0 0 1px 1px var.$shadow-color;
   }
+
+  @media #{var.$screen-laptop} {
+    & {
+      bottom: 2rem;
+
+      &.bottom {
+        bottom: 9rem;
+      }
+    }
+  }
 }

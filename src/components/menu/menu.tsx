@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import clsx from 'clsx';
 import { useState, useEffect, createRef } from 'react';
 import { FiMenu } from 'react-icons/fi';
@@ -102,13 +103,7 @@ const Menu: VFC<Props> = () => {
             </NavLink>
           </li>
           <li className={styles.menuLink}>
-            <NavLink
-              to="/favorite"
-              onClick={handleClickMenuLink}
-              activeClassName={styles.active}
-            >
-              Favorite
-            </NavLink>
+            <a href="#">Favorite</a>
           </li>
           <li className={styles.menuLink}>
             <a

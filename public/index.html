@@ -26,6 +26,7 @@
 
     <!-- Pre-connect 3rd party resources -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
 
     <!-- FONTS -->
     <link
@@ -33,11 +34,17 @@
       rel="stylesheet"
     />
 
+    <!-- Web Components Polyfills -->
+    <script src="/webcomponents-loader.js"></script>
+
     <title>à la Dine</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <a href="#main-contents" id="skip">Skip to Main Contents</a>
-    <div id="root"></div>
+    <header></header>
+    <main id="main-contents"></main>
+    <scroll-to-top></scroll-to-top>
+    <aladine-footer></aladine-footer>
   </body>
 </html>

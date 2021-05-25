@@ -1,0 +1,13 @@
+@use '../../styles/variables' as var;
+
+.notFound {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+
+  @media #{var.$screen-laptop} {
+    & {
+      font-size: 5rem;
+    }
+  }
+}

@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  * Truncate long string
  * @param paragraph The long string that want to truncate
@@ -14,4 +12,41 @@ function truncateWords(paragraph: string, maxCharacter: number): string {
   return `${wordsBoundary} ...`;
 }
 
-export { truncateWords };
+/**
+ * Parse HTML string into HTML Template Element
+ * @param templateString String of valid HTML
+ * @param mapping Map HTML mustache template `{{key}}` to valid string value
+ * @returns HTML Template Element
+ */
+function parseTemplate<T extends Record<string, string>>(
+  templateString: string,
+  mapping?: T
+): HTMLTemplateElement {
+  const template = document.createElement('template');
+  let processedTemplateString = templateString;
+
+  if (mapping) {
+    Object.keys(mapping).forEach((key) => {
+      processedTemplateString = processedTemplateString.replace(
+        new RegExp(`{{${key}}}`, 'gm'),
+        mapping[key]
+      );
+    });
+  }
+
+  template.innerHTML = processedTemplateString;
+
+  return template;
+}
+
+/**
+ * Clear all child of a root / wrapper element
+ * @param rootElement Root / wrapper element that the child want to clear
+ */
+function clearAllChild(rootElement: HTMLElement | null) {
+  while (rootElement?.firstChild) {
+    rootElement.removeChild(rootElement.firstChild);
+  }
+}
+
+export { truncateWords, parseTemplate, clearAllChild };

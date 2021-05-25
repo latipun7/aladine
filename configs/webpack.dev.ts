@@ -1,19 +1,14 @@
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssPresetEnv from 'postcss-preset-env';
 import type { Configuration } from 'webpack';
 
-import { buildDir, srcDir, resolvePath } from './paths';
+import { buildDir, srcDir, publicDir } from './paths';
 
 const babelLoader = {
   loader: 'babel-loader',
   options: {
-    presets: [
-      ['@babel/preset-react', { runtime: 'automatic' }],
-      ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
-    ],
-    plugins: ['react-refresh/babel'],
+    presets: [['@babel/preset-typescript', { onlyRemoveTypeImports: true }]],
   },
 };
 
@@ -24,22 +19,24 @@ const dev = async (): Promise<Configuration> => ({
   output: {
     path: buildDir,
     filename: 'scripts/[name].js',
+    publicPath: '/',
   },
   devServer: {
-    open: false,
     hot: true,
-    contentBase: resolvePath('public'),
+    open: false,
+    writeToDisk: true,
+    contentBase: publicDir,
     watchContentBase: true,
     historyApiFallback: true,
     overlay: { errors: true, warnings: true },
-    writeToDisk: true,
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      issue: { include: { severity: 'warning' } },
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new ReactRefreshWebpackPlugin(),
   ],
   module: {
     rules: [
@@ -47,22 +44,6 @@ const dev = async (): Promise<Configuration> => ({
         test: /\.tsx?$/,
         include: [srcDir],
         use: [babelLoader],
-      },
-      {
-        test: /\.svg$/i,
-        use: [
-          babelLoader,
-          {
-            loader: '@svgr/webpack',
-            options: {
-              babel: false,
-              filenameCase: 'kebab',
-              svgoConfig: {
-                plugins: [{ removeViewBox: false, removeDimensions: true }],
-              },
-            },
-          },
-        ],
       },
       {
         test: /\.(png|jpe?g|webp|gif|bmp)$/i,

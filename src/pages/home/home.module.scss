@@ -1,4 +1,5 @@
-@use '../variables' as var;
+@use '../../styles/variables' as var;
+@use '../../styles/animation';
 
 main {
   h2 {
@@ -13,5 +14,16 @@ main {
     grid-template-columns: repeat(auto-fill, 18rem);
     gap: 1.5rem;
     justify-content: center;
+    align-content: center;
+
+    &.isLoading {
+      display: flex;
+    }
+  }
+
+  .loading {
+    @include animation.loader;
+    height: 3rem;
+    width: 3rem;
   }
 }

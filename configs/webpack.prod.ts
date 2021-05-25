@@ -21,7 +21,6 @@ const babelLoader = {
           corejs: 3.12,
         },
       ],
-      ['@babel/preset-react', { runtime: 'automatic' }],
       ['@babel/preset-typescript', { onlyRemoveTypeImports: true }],
     ],
   },
@@ -57,7 +56,10 @@ const prod = async (): Promise<Configuration> => ({
     new MiniCssExtractPlugin({
       filename: '[name]-[contenthash:8].css',
     }),
-    new BundleAnalyzerPlugin({ analyzerMode: 'static' }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      generateStatsFile: true,
+    }),
   ],
   module: {
     rules: [
@@ -65,22 +67,6 @@ const prod = async (): Promise<Configuration> => ({
         test: /\.tsx?$/,
         include: [srcDir],
         use: [babelLoader],
-      },
-      {
-        test: /\.svg$/i,
-        use: [
-          babelLoader,
-          {
-            loader: '@svgr/webpack',
-            options: {
-              babel: false,
-              filenameCase: 'kebab',
-              svgoConfig: {
-                plugins: [{ removeViewBox: false, removeDimensions: true }],
-              },
-            },
-          },
-        ],
       },
       {
         test: /\.(png|jpe?g|webp|gif|bmp)$/i,

@@ -9,7 +9,7 @@ import { buildDir, publicDir, resolvePath } from './paths';
 
 const common: Configuration = {
   entry: {
-    index: resolvePath('src', 'index.tsx'),
+    index: resolvePath('src', 'index.ts'),
   },
   resolve: {
     extensions: ['.tsx', '.ts', 'jsx', '.js', '.mjs', '.json', '.wasm'],
@@ -28,6 +28,14 @@ const common: Configuration = {
           globOptions: {
             ignore: ['**/index.html'],
           },
+        },
+        {
+          context: 'node_modules/@webcomponents/webcomponentsjs',
+          from: '**/*.js',
+          globOptions: {
+            ignore: ['**/src/**/*'],
+          },
+          to: buildDir,
         },
       ],
     }),
@@ -54,7 +62,13 @@ const common: Configuration = {
     }),
   ],
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.(html|svg)$/,
+        loader: 'html-loader',
+        options: { sources: false, minimize: { collapseWhitespace: true } },
+      },
+    ],
   },
 };
 

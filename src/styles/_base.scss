@@ -25,13 +25,10 @@ body {
   background: var.$background-color;
   font: var.$font-size #{"/"} var.$line-height var.$font-family;
   color: var.$color;
-
-  #root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-width: 19rem;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 19rem;
 
   a {
     @extend %link;
@@ -62,6 +59,10 @@ body {
     max-width: 65rem;
     margin: 1rem auto;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 
     a {
       @extend %link;

@@ -1,4 +1,4 @@
 module.exports = {
-  extends: ['ruppy-react/ts', 'ruppy-ts', 'ruppy-jest'],
+  extends: ['ruppy-node', 'ruppy-ts', 'ruppy-jest'],
   env: { serviceworker: true },
 };

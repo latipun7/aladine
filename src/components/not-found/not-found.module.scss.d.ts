@@ -1,5 +1,5 @@
 export type Styles = {
-  gridContainer: string;
+  notFound: string;
 };
 
 export type ClassNames = keyof Styles;

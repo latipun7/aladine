@@ -34,7 +34,7 @@ const prod = async (): Promise<Configuration> => ({
   output: {
     path: buildDir,
     filename: 'scripts/[name]-[contenthash:8].js',
-    publicPath: '/aladine/',
+    publicPath: 'https://latipun7.github.io/aladine/',
   },
   optimization: {
     minimize: true,

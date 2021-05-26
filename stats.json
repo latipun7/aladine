@@ -1,14 +1,14 @@
 {
-  "hash": "ac8fd3df003615c79d0f",
+  "hash": "3334a5c3de8fb75c3381",
   "version": "5.37.1",
-  "time": 46732,
-  "builtAt": 1622038125428,
+  "time": 45552,
+  "builtAt": 1622038663207,
   "publicPath": "https://latipun7.github.io/aladine/",
   "outputPath": "/home/runner/work/aladine/aladine/dist",
   "assetsByChunkName": {
     "index": [
       "index-6c1eea9f.css",
-      "scripts/index-c6f87fc8.js"
+      "scripts/index-0a322068.js"
     ]
   },
   "assets": [
@@ -641,20 +641,20 @@
     },
     {
       "type": "asset",
-      "name": "scripts/index-c6f87fc8.js",
-      "size": 66139,
+      "name": "scripts/index-0a322068.js",
+      "size": 66143,
       "emitted": true,
       "comparedForEmit": false,
       "cached": false,
       "info": {
         "immutable": true,
-        "contenthash": "c6f87fc8",
+        "contenthash": "0a322068",
         "javascriptModule": false,
         "minimized": true,
         "related": {
-          "sourceMap": "scripts/index-c6f87fc8.js.map"
+          "sourceMap": "scripts/index-0a322068.js.map"
         },
-        "size": 66139
+        "size": 66143
       },
       "chunkNames": [
         "index"
@@ -666,14 +666,14 @@
       "related": [
         {
           "type": "sourceMap",
-          "name": "scripts/index-c6f87fc8.js.map",
-          "size": 13213,
+          "name": "scripts/index-0a322068.js.map",
+          "size": 13218,
           "emitted": true,
           "comparedForEmit": false,
           "cached": false,
           "info": {
             "development": true,
-            "size": 13213
+            "size": 13218
           },
           "chunkNames": [],
           "chunkIdHints": [],
@@ -20022,9 +20022,9 @@
       "initial": true,
       "entry": true,
       "recorded": false,
-      "size": 112561,
+      "size": 112566,
       "sizes": {
-        "javascript": 97165,
+        "javascript": 97170,
         "css/mini-extract": 11995,
         "runtime": 3401
       },
@@ -20037,13 +20037,13 @@
       ],
       "files": [
         "index-6c1eea9f.css",
-        "scripts/index-c6f87fc8.js"
+        "scripts/index-0a322068.js"
       ],
       "auxiliaryFiles": [
         "assets/a7e3e602-320.webp",
-        "scripts/index-c6f87fc8.js.map"
+        "scripts/index-0a322068.js.map"
       ],
-      "hash": "45819e40a5158943ea2b",
+      "hash": "5ebbb7db2e7f9341bf6a",
       "childrenByOrder": {},
       "id": 826,
       "siblings": [
@@ -20056,9 +20056,9 @@
           "type": "module",
           "moduleType": "javascript/esm",
           "layer": null,
-          "size": 97165,
+          "size": 97170,
           "sizes": {
-            "javascript": 97165
+            "javascript": 97170
           },
           "built": true,
           "codeGenerated": true,
@@ -20310,9 +20310,9 @@
               "type": "module",
               "moduleType": "javascript/auto",
               "layer": null,
-              "size": 2501,
+              "size": 2506,
               "sizes": {
-                "javascript": 2501
+                "javascript": 2506
               },
               "built": true,
               "codeGenerated": false,
@@ -25423,9 +25423,9 @@
       "type": "module",
       "moduleType": "javascript/esm",
       "layer": null,
-      "size": 97165,
+      "size": 97170,
       "sizes": {
-        "javascript": 97165
+        "javascript": 97170
       },
       "built": true,
       "codeGenerated": true,
@@ -25673,9 +25673,9 @@
           "type": "module",
           "moduleType": "javascript/auto",
           "layer": null,
-          "size": 2501,
+          "size": 2506,
           "sizes": {
-            "javascript": 2501
+            "javascript": 2506
           },
           "built": true,
           "codeGenerated": false,
@@ -29957,9 +29957,9 @@
       "type": "module",
       "moduleType": "javascript/auto",
       "layer": null,
-      "size": 2501,
+      "size": 2506,
       "sizes": {
-        "javascript": 2501
+        "javascript": 2506
       },
       "built": true,
       "codeGenerated": false,
@@ -52956,12 +52956,12 @@
           "size": 11995
         },
         {
-          "name": "scripts/index-c6f87fc8.js",
-          "size": 66139
+          "name": "scripts/index-0a322068.js",
+          "size": 66143
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 127956,
+      "assetsSize": 127960,
       "auxiliaryAssets": [
         {
           "name": "assets/a7e3e602-320.webp",
@@ -52972,12 +52972,12 @@
           "size": 85386
         },
         {
-          "name": "scripts/index-c6f87fc8.js.map",
-          "size": 13213
+          "name": "scripts/index-0a322068.js.map",
+          "size": 13218
         }
       ],
       "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 100597,
+      "auxiliaryAssetsSize": 100602,
       "children": {},
       "childAssets": {},
       "isOverSizeLimit": false
@@ -53000,12 +53000,12 @@
           "size": 11995
         },
         {
-          "name": "scripts/index-c6f87fc8.js",
-          "size": 66139
+          "name": "scripts/index-0a322068.js",
+          "size": 66143
         }
       ],
       "filteredAssets": 0,
-      "assetsSize": 127956,
+      "assetsSize": 127960,
       "auxiliaryAssets": [
         {
           "name": "assets/a7e3e602-320.webp",
@@ -53016,12 +53016,12 @@
           "size": 85386
         },
         {
-          "name": "scripts/index-c6f87fc8.js.map",
-          "size": 13213
+          "name": "scripts/index-0a322068.js.map",
+          "size": 13218
         }
       ],
       "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 100597,
+      "auxiliaryAssetsSize": 100602,
       "children": {},
       "childAssets": {},
       "isOverSizeLimit": false
@@ -53045,8 +53045,8 @@
       "name": "HtmlWebpackCompiler",
       "hash": "3207f4536b12afd65045",
       "version": "5.37.1",
-      "time": 33180,
-      "builtAt": 1622038111925,
+      "time": 32315,
+      "builtAt": 1622038650009,
       "publicPath": "",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -53644,8 +53644,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/components/card/card.module.scss",
       "hash": "6f3567bbc1c165d0c35c",
       "version": "5.37.1",
-      "time": 797,
-      "builtAt": 1622038116123,
+      "time": 783,
+      "builtAt": 1622038654505,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -54353,8 +54353,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/components/footer/footer.module.scss",
       "hash": "a852a257f3318deacf03",
       "version": "5.37.1",
-      "time": 1858,
-      "builtAt": 1622038115741,
+      "time": 1755,
+      "builtAt": 1622038654107,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -55062,8 +55062,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/components/hero/hero.module.scss",
       "hash": "6110186a7e18113edfb7",
       "version": "5.37.1",
-      "time": 1186,
-      "builtAt": 1622038116078,
+      "time": 1182,
+      "builtAt": 1622038654463,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -56228,8 +56228,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/components/menu/menu.module.scss",
       "hash": "be8557cb48d614115e16",
       "version": "5.37.1",
-      "time": 1127,
-      "builtAt": 1622038116000,
+      "time": 1120,
+      "builtAt": 1622038654388,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -56937,8 +56937,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/components/not-found/not-found.module.scss",
       "hash": "8db5609df9c814058ef0",
       "version": "5.37.1",
-      "time": 1116,
-      "builtAt": 1622038116011,
+      "time": 1111,
+      "builtAt": 1622038654395,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -57646,8 +57646,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/components/scroll-to-top/scroll-to-top.module.scss",
       "hash": "90bd489e56f1a76e2c7e",
       "version": "5.37.1",
-      "time": 1850,
-      "builtAt": 1622038115728,
+      "time": 1768,
+      "builtAt": 1622038654116,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -58355,8 +58355,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/pages/home/home.module.scss",
       "hash": "174995eef42fbfdcabac",
       "version": "5.37.1",
-      "time": 1120,
-      "builtAt": 1622038116025,
+      "time": 1101,
+      "builtAt": 1622038654411,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},
@@ -59064,8 +59064,8 @@
       "name": "mini-css-extract-plugin /home/runner/work/aladine/aladine/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!/home/runner/work/aladine/aladine/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!/home/runner/work/aladine/aladine/node_modules/resolve-url-loader/index.js??ruleSet[1].rules[3].use[3]!/home/runner/work/aladine/aladine/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[4]!/home/runner/work/aladine/aladine/src/styles/index.scss",
       "hash": "08444dead71f3442c8ae",
       "version": "5.37.1",
-      "time": 2826,
-      "builtAt": 1622038115601,
+      "time": 2761,
+      "builtAt": 1622038654004,
       "publicPath": "https://latipun7.github.io/aladine/",
       "outputPath": "/home/runner/work/aladine/aladine/dist",
       "assetsByChunkName": {},

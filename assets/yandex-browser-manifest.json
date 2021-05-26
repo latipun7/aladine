@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "api_version": 1,
+  "layout": {
+    "logo": "yandex-browser-50x50.png",
+    "color": "#eaeaea",
+    "show_title": true
+  },
+  "categories": [
+    "food"
+  ],
+  "icons": [
+    {
+      "src": "maskable_icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

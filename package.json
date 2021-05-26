@@ -14,7 +14,7 @@
     "url": "https://github.com/latipun7/aladine.git"
   },
   "scripts": {
-    "dev": "webpack serve --env mode=development",
+    "dev": "rimraf dist && webpack serve --env mode=development",
     "build": "rimraf dist && webpack --env mode=production",
     "type-check": "tsc",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",

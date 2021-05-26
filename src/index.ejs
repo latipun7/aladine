@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%= htmlWebpackPlugin.tags.headTags.filter((tag) => tag.tagName ===
+    'meta').join('') %>
+
+    <!-- Pre-connect 3rd party resources -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <%= htmlWebpackPlugin.tags.headTags.filter((tag) => tag.tagName ===
+    'link').join('') %>
+
+    <!-- Web Components Polyfills -->
+    <script src="<%= webpackConfig.output.publicPath %>webcomponents-loader.js"></script>
+
+    <%= htmlWebpackPlugin.tags.headTags.filter((tag) => tag.tagName ===
+    'script').join('') %>
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <a href="#main-contents" id="skip">Skip to Main Contents</a>
+    <header></header>
+    <main id="main-contents"></main>
+    <scroll-to-top></scroll-to-top>
+    <aladine-footer></aladine-footer>
+  </body>
+</html>

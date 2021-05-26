@@ -37,7 +37,7 @@ class Router {
           done();
         },
       })
-      .on(() => {
+      .on('/', () => {
         Router.inject(new Home());
         Router.inject(new Hero(), true);
       })

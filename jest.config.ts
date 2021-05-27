@@ -10,6 +10,7 @@ const tsconfigPaths = pathsToModuleNameMapper(compilerOptions.paths, {
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   verbose: true,
+  testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules', '<rootDir>'],
   moduleNameMapper: {
     '\\.(css|sass|scss)$': 'identity-obj-proxy',

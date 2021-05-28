@@ -1,5 +1,5 @@
 import eatingImage from 'assets/eating.svg';
-import { parseTemplate } from 'lib/utils';
+import { parseTemplate } from 'utils';
 
 import htmlString from './hero.html';
 import styles from './hero.module.scss';

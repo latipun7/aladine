@@ -1,4 +1,4 @@
-import { parseTemplate } from 'lib/utils';
+import { parseTemplate } from 'utils';
 
 import htmlString from './footer.html';
 import styles from './footer.module.scss';

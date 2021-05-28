@@ -1,6 +1,6 @@
-import DATA from 'src/DATA.json';
 import Card from 'components/card';
-import { parseTemplate, clearAllChild } from 'lib/utils';
+import RestaurantAPI from 'lib/restaurant-api';
+import { parseTemplate, clearAllChild } from 'utils';
 
 import htmlString from './home.html';
 import styles from './home.module.scss';
@@ -20,10 +20,11 @@ class Home extends HTMLElement {
     this.gridContainer = this.querySelector(`.${styles.gridContainer}`);
   }
 
-  connectedCallback() {
-    const { restaurants } = DATA;
+  async connectedCallback() {
+    try {
+      const api = new RestaurantAPI();
+      const { restaurants } = await api.getList();
 
-    setTimeout(() => {
       clearAllChild(this.gridContainer);
       this.gridContainer?.classList.remove(`${styles.isLoading}`);
 
@@ -33,7 +34,14 @@ class Home extends HTMLElement {
         card.dataRestaurant = restaurant;
         this.gridContainer?.appendChild(card);
       });
-    }, 1000);
+    } catch (error) {
+      if (error instanceof Error) {
+        const paragraphElement = document.createElement('p');
+
+        paragraphElement.innerText = error.message;
+        this.gridContainer?.appendChild(paragraphElement);
+      }
+    }
   }
 
   render() {

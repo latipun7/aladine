@@ -1,4 +1,4 @@
-import { parseTemplate } from 'lib/utils';
+import { parseTemplate } from 'utils';
 
 import htmlString from './menu.html';
 import styles from './menu.module.scss';

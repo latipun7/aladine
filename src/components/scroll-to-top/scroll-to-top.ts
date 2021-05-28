@@ -1,4 +1,4 @@
-import { parseTemplate } from 'lib/utils';
+import { parseTemplate } from 'utils';
 
 import htmlString from './scroll-to-top.html';
 import styles from './scroll-to-top.module.scss';

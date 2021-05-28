@@ -1,4 +1,4 @@
-import { parseTemplate } from 'lib/utils';
+import { parseTemplate } from 'utils';
 
 import htmlString from './not-found.html';
 import styles from './not-found.module.scss';

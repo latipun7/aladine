@@ -3,7 +3,7 @@ import Menu from 'components/menu';
 import Hero from 'components/hero';
 import Home from 'pages/home';
 import NotFound from 'components/not-found';
-import { clearAllChild } from 'lib/utils';
+import { clearAllChild } from 'utils';
 
 class Router {
   router: Navigo;

@@ -20,7 +20,7 @@
       "lib/*": ["src/lib/*"],
       "pages/*": ["src/pages/*"],
       "styles/*": ["src/styles/*"],
-      "test.utils": ["tests/test.utils.tsx"]
+      "utils": ["src/lib/aladine-utils.ts"]
     },
     "typeRoots": ["./node_modules/@types", "./typings"],
 

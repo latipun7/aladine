@@ -1,19 +1,14 @@
 import mapMarkerIcon from 'assets/icons/map-marker.svg';
 import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
-import { clearAllChild, parseTemplate, truncateWords } from 'lib/utils';
+import RestaurantAPI from 'lib/restaurant-api';
+import { clearAllChild, parseTemplate, truncateWords } from 'utils';
+import type { Restaurant } from 'lib/restaurant-api';
 
 import htmlString from './card.html';
 import styles from './card.module.scss';
 
-type Data = {
-  id: string;
-  name: string;
-  description: string;
-  pictureId: string;
-  city: string;
-  rating: number;
-} | null;
+type Data = Restaurant | null;
 
 type HTMLString = {
   cardContainerStyle: string;
@@ -39,7 +34,7 @@ type HTMLString = {
 };
 
 class Card extends HTMLElement {
-  data: Data | null;
+  data: Data;
 
   constructor() {
     super();
@@ -67,11 +62,12 @@ class Card extends HTMLElement {
 
   render() {
     const { data } = this;
+    const api = new RestaurantAPI();
+    const image = api.pictureLink(data?.pictureId);
 
-    // if (data) {
     const template = parseTemplate<HTMLString>(htmlString, {
       cardContainerStyle: styles.cardContainer,
-      pictureIdData: data?.pictureId || '',
+      pictureIdData: image || '',
       pictureNameData: data?.name || '',
       cityStyle: styles.city,
       flailStyle: styles.flail,
@@ -94,7 +90,6 @@ class Card extends HTMLElement {
 
     this.appendChild(template.content);
     this.fillStarRating();
-    // }
   }
 }
 

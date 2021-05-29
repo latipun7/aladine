@@ -1,4 +1,5 @@
 import Navigo from 'navigo';
+import Detail from 'components/detail';
 import Menu from 'components/menu';
 import Hero from 'components/hero';
 import Home from 'pages/home';
@@ -8,8 +9,11 @@ import { clearAllChild } from 'utils';
 class Router {
   router: Navigo;
 
-  constructor(publicPath = '/') {
-    this.router = new Navigo(publicPath);
+  constructor() {
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    this.router = new Navigo(isProduction ? '/aladine/' : '/');
+    this.#defineRoute();
   }
 
   static inject(component: HTMLElement, inHeader = false) {
@@ -29,13 +33,17 @@ class Router {
     }
   }
 
-  init() {
+  #defineRoute() {
     this.router
       .hooks({
-        leave(done) {
+        before(done) {
           window.scrollTo({ top: 0 });
           done();
         },
+      })
+      .on('/restaurant/:id', (match) => {
+        if (match && match.data) Router.inject(new Detail(match.data.id));
+        // TODO: else, inject site-error. (something went wrong)
       })
       .on('/', () => {
         Router.inject(new Home());
@@ -43,8 +51,15 @@ class Router {
       })
       .notFound(() => {
         Router.inject(new NotFound());
-      })
-      .resolve();
+      });
+  }
+
+  init() {
+    this.router.resolve();
+  }
+
+  navigate(path: string) {
+    this.router.navigate(path);
   }
 }
 

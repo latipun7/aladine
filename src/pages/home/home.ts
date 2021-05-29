@@ -11,7 +11,7 @@ type HTMLString = {
 };
 
 class Home extends HTMLElement {
-  gridContainer: HTMLSlotElement | null;
+  gridContainer: HTMLDivElement | null;
 
   constructor() {
     super();
@@ -38,6 +38,7 @@ class Home extends HTMLElement {
       if (error instanceof Error) {
         const paragraphElement = document.createElement('p');
 
+        clearAllChild(this.gridContainer);
         paragraphElement.innerText = error.message;
         this.gridContainer?.appendChild(paragraphElement);
       }

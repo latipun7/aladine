@@ -123,7 +123,7 @@ class RestaurantAPI {
     }
   }
 
-  async addReview(review: string) {
+  async addReview(review: { id: string; name: string; review: string }) {
     try {
       const { data } = await this.axios.post<ReviewResponse>('/review', review);
 

@@ -2,6 +2,7 @@ import mapMarkerIcon from 'assets/icons/map-marker.svg';
 import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
 import RestaurantAPI from 'lib/restaurant-api';
+import Router from 'lib/router';
 import { clearAllChild, parseTemplate, truncateWords } from 'utils';
 import type { Restaurant } from 'lib/restaurant-api';
 
@@ -36,11 +37,14 @@ type HTMLString = {
 class Card extends HTMLElement {
   data: Data;
 
+  linkElement: HTMLAnchorElement | null;
+
   constructor() {
     super();
 
     this.data = null;
     this.render();
+    this.linkElement = this.querySelector('a');
   }
 
   set dataRestaurant(value: Data) {
@@ -58,6 +62,23 @@ class Card extends HTMLElement {
     );
 
     if (starFillElement) starFillElement.style.width = `${percentageRounded}%`;
+  }
+
+  handleClick(event: Event) {
+    const router = new Router();
+
+    event.preventDefault();
+    if (this.data) {
+      router.navigate(`/restaurant/${this.data.id}`);
+    }
+  }
+
+  connectedCallback() {
+    this.addEventListener('click', this.handleClick.bind(this));
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this.handleClick.bind(this));
   }
 
   render() {

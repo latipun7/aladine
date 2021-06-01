@@ -1,23 +1,36 @@
-<figure>
-  <img src="{{pictureIdData}}" alt="{{pictureNameData}}" />
-</figure>
-<div class="{{cityStyle}}">
-  <div class="{{flailStyle}}"></div>
-  <span style="color: #891818" class="icon"> {{mapMarkerIcon}} </span>
-  {{cityData}}
-</div>
-<div class="{{titleStyle}}">
-  <a href="{{titleLink}}" data-navigo>{{nameData}}</a>
-</div>
-<div class="{{ratingStyle}}" aria-label="{{ratingLabel}}">
-  <div class="{{starsStyle}}">
-    <div class="{{starOutlineStyle}}">
-      <div class="{{starFillStyle}}">
-        {{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}
-      </div>
-      {{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}
-    </div>
+<div class="{{detailContainerStyle}}">
+  <div class="{{detailHeaderStyle}}">
+    <figure>
+      <img src="{{pictureIdData}}" alt="{{pictureNameData}}" />
+    </figure>
+    <button class="{{favoriteButtonStyle}}" title="Add to favorite">
+      {{heartIcon}}
+    </button>
   </div>
-  {{ratingData}}
+  <h1 class="{{titleStyle}}">{{nameData}}</h1>
+  <p class="{{cityStyle}}">
+    <span style="color: #891818" class="icon">{{mapMarkerIcon}}</span>
+    {{cityData}}
+  </p>
+  <span class="{{ratingStyle}}" title="{{ratingLabel}}">
+    <span class="{{starsStyle}}">
+      <span class="{{starOutlineStyle}}">
+        <span class="{{starFillStyle}}">
+          {{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}
+        </span>
+        {{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}
+      </span>
+    </span>
+    <span class="screenreader-text">{{ratingLabel}}</span>
+    <span aria-hidden="true">{{ratingData}}</span>
+  </span>
+  <details>
+    <summary>Description</summary>
+    {{descriptionData}}
+  </details>
+  <details>
+    <summary>Menu Category: {{categoryData}}</summary>
+    <p><b>Foods menu: </b>{{foodsData}}</p>
+    <p><b>Drinks menu: </b>{{drinksData}}</p>
+  </details>
 </div>
-<p class="{{descriptionStyle}}">{{descriptionData}}</p>

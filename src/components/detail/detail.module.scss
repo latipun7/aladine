@@ -1,11 +1,11 @@
 @use '../../styles/variables' as var;
+@use '../card/card.module.scss';
 @use '../../styles/animation';
 
-.detailContainer {
-  box-shadow: var.$shadow;
-  border-radius: 1rem;
-  background: hsl(0, 0%, 100%);
-  position: relative;
+.this {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .loading {
     @include animation.loader;
@@ -13,95 +13,94 @@
     width: 3rem;
   }
 
-  figure {
-    position: relative;
-    padding-top: 65%;
-    overflow: hidden;
-    border-radius: 1rem 1rem 0 0;
-
-    img {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-    }
-  }
-
-  .city {
-    position: absolute;
-    top: 9.5rem;
-    left: -0.35rem;
-    padding: 0.2rem 0.75rem 0.2rem 0.5rem;
-    background: var.$primary-color;
-    transform-style: preserve-3d;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 7px 1px hsla(0, 0%, 0%, 0.5);
-
-    .flail {
-      position: absolute;
-      right: -1rem;
-      bottom: -0.55rem;
-      height: 100%;
-      width: 2rem;
-      filter: drop-shadow(0 0 7px hsla(0, 0%, 0%, 0.5));
-      transform: translateZ(-1px);
-
-      &::after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: var.$primary-color;
-        border-radius: 0 0 0 0.5rem;
-        clip-path: polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%);
-      }
-    }
-  }
-
-  .rating {
+  .error {
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+  }
+}
 
-    .stars {
-      color: hsl(29, 100%, 47%);
-      width: 6.5rem;
-      height: 2rem;
-      text-align: start;
+.container {
+  width: 100%;
 
-      .starOutline {
-        position: relative;
-        display: inline;
-        vertical-align: middle;
+  .header {
+    .favoriteButton {
+      border: none;
+      position: absolute;
+      bottom: -1.25rem;
+      right: 1rem;
+      border-radius: 50%;
+      color: hsl(0, 70%, 32%);
+      background-color: var.$primary-color;
+      padding: 0.75rem;
+      height: 3rem;
+      width: 3rem;
+      box-shadow: var.$shadow;
+      transition: background-color 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out, bottom 0.25s ease-in-out;
 
-        .starFill {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          white-space: nowrap;
-          overflow: hidden;
-          width: 0;
+      &:hover {
+        background-color: darken(var.$primary-color, 5%);
+        box-shadow: 0 0 1px 1px var.$shadow-color;
+      }
+
+      @media #{var.$screen-tablet} {
+        & {
+          right: 2rem;
+        }
+      }
+
+      @media #{var.$screen-laptop} {
+        & {
+          right: 3rem;
         }
       }
     }
   }
 
   .title {
-    font-size: 1.25rem;
-    text-align: center;
-    margin-top: 2rem;
-    height: auto;
+    color: var.$secondary-color;
 
-    a {
-      padding: 1rem;
-      display: block;
+    &:hover {
+      color: adjust-color(
+        var.$secondary-color,
+        $saturation: 30%,
+        $lightness: 12%
+      );
     }
   }
 
-  .description {
-    padding: 1rem;
+  .city {
+    text-align: center;
+  }
+
+  details {
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    margin: 1rem;
+
+    summary {
+      font-weight: bold;
+      text-align: center;
+      margin: -0.5em -0.5em 0;
+      padding: 0.5em;
+    }
+
+    &[open] {
+      padding: 0.5em;
+
+      summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    p {
+      margin: 1rem 0;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
   }
 }

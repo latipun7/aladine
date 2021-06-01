@@ -1,18 +1,21 @@
 import mapMarkerIcon from 'assets/icons/map-marker.svg';
 import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
+import heartOutlineIcon from 'assets/icons/heart.svg';
+// import heartFillIcon from 'assets/icons/heart-fill.svg';
 import RestaurantAPI from 'lib/restaurant-api';
 import { clearAllChild, parseTemplate } from 'utils';
 
-import htmlContainerString from './detail-container.html';
 import htmlDetailString from './detail.html';
 import styles from './detail.module.scss';
 
 type HTMLString = Partial<{
   detailContainerStyle: string;
-  loadingStyle: string;
+  detailHeaderStyle: string;
   pictureIdData: string;
   pictureNameData: string;
+  favoriteButtonStyle: string;
+  heartIcon: string;
   cityStyle: string;
   flailStyle: string;
   mapMarkerIcon: string;
@@ -28,19 +31,18 @@ type HTMLString = Partial<{
   regStarIcon: string;
   starIcon: string;
   ratingData: string;
-  descriptionStyle: string;
   descriptionData: string;
+  categoryData: string;
+  foodsData: string;
+  drinksData: string;
 }>;
 
 class Detail extends HTMLElement {
-  container: HTMLDivElement | null;
-
   constructor(private restaurantID: string) {
     super();
 
     this.restaurantID = restaurantID;
     this.render();
-    this.container = this.querySelector(`.${styles.detailContainer}`);
   }
 
   async connectedCallback() {
@@ -48,14 +50,18 @@ class Detail extends HTMLElement {
       const api = new RestaurantAPI();
       const { restaurant } = await api.getDetail(this.restaurantID);
       const image = api.pictureLink(restaurant.pictureId, 'large');
-
+      const heartIcon = heartOutlineIcon;
       const template = parseTemplate<HTMLString>(htmlDetailString, {
+        detailContainerStyle: styles.container,
+        detailHeaderStyle: styles.header,
         pictureIdData: image,
         pictureNameData: restaurant.name,
+        favoriteButtonStyle: styles.favoriteButton,
+        heartIcon,
         cityStyle: styles.city,
         flailStyle: styles.flail,
         mapMarkerIcon,
-        cityData: restaurant.city,
+        cityData: `${restaurant.address}, ${restaurant.city}`,
         titleStyle: styles.title,
         titleLink: `/restaurant/${restaurant.id}`,
         nameData: restaurant.name,
@@ -67,20 +73,29 @@ class Detail extends HTMLElement {
         regStarIcon,
         starIcon,
         ratingData: `${restaurant.rating}`,
-        descriptionStyle: styles.description,
         descriptionData: restaurant.description,
+        categoryData: restaurant.categories
+          .map((category) => category.name)
+          .join(', '),
+        foodsData: restaurant.menus.foods
+          .map((category) => category.name)
+          .join(', '),
+        drinksData: restaurant.menus.drinks
+          .map((category) => category.name)
+          .join(', '),
       });
 
-      clearAllChild(this.container);
-      this.container?.appendChild(template.content);
+      clearAllChild(this);
+      this.appendChild(template.content);
       this.fillStarRating(restaurant.rating);
     } catch (error) {
       if (error instanceof Error) {
         const paragraphElement = document.createElement('p');
 
-        clearAllChild(this.container);
+        clearAllChild(this);
+        paragraphElement.classList.add(styles.error);
         paragraphElement.innerText = error.message;
-        this.container?.appendChild(paragraphElement);
+        this.appendChild(paragraphElement);
       }
     }
   }
@@ -96,12 +111,11 @@ class Detail extends HTMLElement {
   }
 
   render() {
-    const template = parseTemplate<HTMLString>(htmlContainerString, {
-      detailContainerStyle: styles.detailContainer,
-      loadingStyle: styles.loading,
-    });
+    const loadingElement = document.createElement('div');
 
-    this.appendChild(template.content);
+    this.classList.add(styles.this);
+    loadingElement.classList.add(styles.loading);
+    this.appendChild(loadingElement);
   }
 }
 

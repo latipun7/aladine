@@ -1,25 +1,26 @@
 <div class="{{cardContainerStyle}}">
-  <figure>
-    <img src="{{pictureIdData}}" alt="{{pictureNameData}}" />
-  </figure>
-  <div class="{{cityStyle}}">
-    <div class="{{flailStyle}}"></div>
-    <span style="color: #891818" class="icon"> {{mapMarkerIcon}} </span>
-    {{cityData}}
-  </div>
-  <div class="{{titleStyle}}">
-    <a href="{{titleLink}}">{{nameData}}</a>
-  </div>
-  <div class="{{ratingStyle}}" aria-label="{{ratingLabel}}">
-    <div class="{{starsStyle}}">
-      <div class="{{starOutlineStyle}}">
-        <div class="{{starFillStyle}}">
-          {{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}
-        </div>
-        {{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}
-      </div>
+  <div class="{{cardHeaderStyle}}">
+    <figure>
+      <img src="{{pictureIdData}}" alt="{{pictureNameData}}" />
+    </figure>
+    <div class="{{cityStyle}}">
+      <div class="{{flailStyle}}"></div>
+      <span style="color: #891818" class="icon">{{mapMarkerIcon}}</span>
+      {{cityData}}
     </div>
-    {{ratingData}}
   </div>
-  <p class="{{descriptionStyle}}">{{descriptionData}}</p>
+  <a href="{{titleLink}}" class="{{titleStyle}}">{{nameData}}</a>
+  <span class="{{ratingStyle}}" title="{{ratingLabel}}">
+    <span class="{{starsStyle}}">
+      <span class="{{starOutlineStyle}}">
+        <span class="{{starFillStyle}}">
+          {{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}
+        </span>
+        {{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}
+      </span>
+    </span>
+    <span class="screenreader-text">{{ratingLabel}}</span>
+    <span aria-hidden="true">{{ratingData}}</span>
+  </span>
+  <p>{{descriptionData}}</p>
 </div>

@@ -13,14 +13,15 @@ type Data = Restaurant | null;
 
 type HTMLString = {
   cardContainerStyle: string;
+  cardHeaderStyle: string;
   pictureIdData: string;
   pictureNameData: string;
   cityStyle: string;
   flailStyle: string;
   mapMarkerIcon: string;
   cityData: string;
-  titleStyle: string;
   titleLink: string;
+  titleStyle: string;
   nameData: string;
   ratingStyle: string;
   ratingLabel: string;
@@ -30,21 +31,17 @@ type HTMLString = {
   regStarIcon: string;
   starIcon: string;
   ratingData: string;
-  descriptionStyle: string;
   descriptionData: string;
 };
 
 class Card extends HTMLElement {
   data: Data;
 
-  linkElement: HTMLAnchorElement | null;
-
   constructor() {
     super();
 
     this.data = null;
     this.render();
-    this.linkElement = this.querySelector('a');
   }
 
   set dataRestaurant(value: Data) {
@@ -64,13 +61,15 @@ class Card extends HTMLElement {
     if (starFillElement) starFillElement.style.width = `${percentageRounded}%`;
   }
 
-  handleClick(event: Event) {
+  handleClick(event: MouseEvent) {
     const router = new Router();
 
     event.preventDefault();
-    if (this.data) {
+    if (this.data && (event.target as HTMLElement).matches('a')) {
       router.navigate(`/restaurant/${this.data.id}`);
     }
+
+    return false;
   }
 
   connectedCallback() {
@@ -85,17 +84,17 @@ class Card extends HTMLElement {
     const { data } = this;
     const api = new RestaurantAPI();
     const image = api.pictureLink(data?.pictureId);
-
     const template = parseTemplate<HTMLString>(htmlString, {
-      cardContainerStyle: styles.cardContainer,
+      cardContainerStyle: styles.container,
+      cardHeaderStyle: styles.header,
       pictureIdData: image || '',
       pictureNameData: data?.name || '',
       cityStyle: styles.city,
       flailStyle: styles.flail,
       mapMarkerIcon,
       cityData: data?.city || '',
-      titleStyle: styles.title,
       titleLink: `/restaurant/${data?.id || ''}`,
+      titleStyle: styles.title,
       nameData: data?.name || '',
       ratingStyle: styles.rating,
       ratingLabel: `star rating ${data?.rating || ''} of 5`,
@@ -105,7 +104,6 @@ class Card extends HTMLElement {
       regStarIcon,
       starIcon,
       ratingData: `${data?.rating || ''}`,
-      descriptionStyle: styles.description,
       descriptionData: truncateWords(data?.description || '', 150),
     });
 

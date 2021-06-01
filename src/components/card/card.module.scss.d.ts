@@ -1,8 +1,8 @@
 export type Styles = {
-  cardContainer: string;
   city: string;
-  description: string;
+  container: string;
   flail: string;
+  header: string;
   rating: string;
   starFill: string;
   starOutline: string;

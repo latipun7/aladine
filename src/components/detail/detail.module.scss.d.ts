@@ -1,14 +1,17 @@
 export type Styles = {
   city: string;
-  description: string;
-  detailContainer: string;
+  container: string;
+  error: string;
+  favoriteButton: string;
   flail: string;
+  header: string;
   loading: string;
   rating: string;
   spinAround: string;
   starFill: string;
   starOutline: string;
   stars: string;
+  this: string;
   title: string;
 };
 

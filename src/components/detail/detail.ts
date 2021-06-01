@@ -3,6 +3,7 @@ import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
 import heartOutlineIcon from 'assets/icons/heart.svg';
 // import heartFillIcon from 'assets/icons/heart-fill.svg';
+import Review from 'components/review';
 import RestaurantAPI from 'lib/restaurant-api';
 import { clearAllChild, parseTemplate } from 'utils';
 
@@ -35,6 +36,8 @@ type HTMLString = Partial<{
   categoryData: string;
   foodsData: string;
   drinksData: string;
+  reviewContainerStyle: string;
+  subtitleStyle: string;
 }>;
 
 class Detail extends HTMLElement {
@@ -74,6 +77,8 @@ class Detail extends HTMLElement {
         starIcon,
         ratingData: `${restaurant.rating}`,
         descriptionData: restaurant.description,
+        reviewContainerStyle: styles.reviewContainer,
+        subtitleStyle: styles.subtitle,
         categoryData: restaurant.categories
           .map((category) => category.name)
           .join(', '),
@@ -88,6 +93,14 @@ class Detail extends HTMLElement {
       clearAllChild(this);
       this.appendChild(template.content);
       this.fillStarRating(restaurant.rating);
+
+      const reviewElement = this.querySelector(`.${styles.reviewContainer}`);
+
+      restaurant.customerReviews.forEach((review) => {
+        const reviewComponent = new Review(review);
+
+        reviewElement?.appendChild(reviewComponent);
+      });
     } catch (error) {
       if (error instanceof Error) {
         const paragraphElement = document.createElement('p');

@@ -7,6 +7,7 @@ export type Styles = {
   starFill: string;
   starOutline: string;
   stars: string;
+  this: string;
   title: string;
 };
 

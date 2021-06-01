@@ -83,6 +83,11 @@ body {
     vertical-align: middle;
     margin: 0 0.25rem;
   }
+
+  .screenreader-text {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
 }
 
 *::-webkit-scrollbar {

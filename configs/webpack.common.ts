@@ -42,6 +42,7 @@ const common: Configuration = {
       cache: false,
       title: 'à la Dine',
       meta: {
+        viewport: 'width=device-width, initial-scale=1',
         title: 'à la Dine',
         'application-name': 'à la Dine',
         'theme-color': '#08d9d6',

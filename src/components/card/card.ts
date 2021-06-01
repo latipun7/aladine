@@ -107,6 +107,7 @@ class Card extends HTMLElement {
       descriptionData: truncateWords(data?.description || '', 150),
     });
 
+    this.classList.add(styles.this);
     this.appendChild(template.content);
     this.fillStarRating();
   }

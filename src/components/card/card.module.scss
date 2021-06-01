@@ -1,5 +1,12 @@
 @use '../../styles/variables' as var;
 
+.this {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   box-shadow: var.$shadow;
   border-radius: 1rem;
@@ -96,9 +103,5 @@
 
   p {
     margin: 1rem;
-
-    &:last-child {
-      padding-bottom: 1rem;
-    }
   }
 }

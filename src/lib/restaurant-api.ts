@@ -8,7 +8,7 @@ type Menu = {
   drinks: Category[];
 };
 
-type CustomerReview = {
+export type CustomerReview = {
   name: string;
   review: string;
   date: string;

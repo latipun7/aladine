@@ -55,6 +55,7 @@ type ListResponse = Omit<List, 'founded'>;
 type DetailResponse = Omit<Detail, 'count' | 'founded'>;
 type SearchResponse = Omit<List, 'count' | 'message'>;
 type ReviewResponse = Omit<Review, 'count' | 'founded'>;
+export type AddCustomerReview = { id: string; name: string; review: string };
 
 class RestaurantAPI {
   axios: AxiosInstance;
@@ -123,7 +124,7 @@ class RestaurantAPI {
     }
   }
 
-  async addReview(review: { id: string; name: string; review: string }) {
+  async addReview(review: AddCustomerReview) {
     try {
       const { data } = await this.axios.post<ReviewResponse>('/review', review);
 

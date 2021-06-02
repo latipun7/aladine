@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": false,
-    "lib": ["DOM", "ESNext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "CommonJS",
     "noEmit": true,
     "removeComments": true,

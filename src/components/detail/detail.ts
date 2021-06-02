@@ -3,6 +3,7 @@ import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
 import heartOutlineIcon from 'assets/icons/heart.svg';
 // import heartFillIcon from 'assets/icons/heart-fill.svg';
+import AddReview from 'components/add-review';
 import Review from 'components/review';
 import RestaurantAPI from 'lib/restaurant-api';
 import { clearAllChild, parseTemplate } from 'utils';
@@ -95,12 +96,15 @@ class Detail extends HTMLElement {
       this.fillStarRating(restaurant.rating);
 
       const reviewElement = this.querySelector(`.${styles.reviewContainer}`);
+      const addReview = new AddReview(restaurant.id);
 
       restaurant.customerReviews.forEach((review) => {
         const reviewComponent = new Review(review);
 
         reviewElement?.appendChild(reviewComponent);
       });
+
+      this.appendChild(addReview);
     } catch (error) {
       if (error instanceof Error) {
         const paragraphElement = document.createElement('p');

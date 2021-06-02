@@ -1,0 +1,111 @@
+@use '../../styles/variables' as var;
+
+.addButton {
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: -1.5rem;
+  color: hsl(38, 45%, 92%);
+  background-color: var.$secondary-color;
+  padding: 0.75rem;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: var.$shadow;
+  transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
+    bottom 0.25s ease-in-out;
+
+  &:hover {
+    background-color: darken(var.$secondary-color, 5%);
+    box-shadow: 0 0 1px 1px var.$shadow-color;
+  }
+}
+
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    width: 80%;
+    max-width: 30rem;
+    background-color: var.$background-color;
+    border-radius: 0.5rem;
+
+    form {
+      padding: 1.5rem;
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      textarea {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0 1.5rem;
+        border: 1px solid hsla(0, 0%, 0%, 0.2);
+        background-color: hsla(0, 0%, 100%, 0.2);
+        font: inherit;
+
+        &:hover,
+        &:focus {
+          border: 1px solid change-color(var.$secondary-color, $alpha: 0.5);
+        }
+      }
+
+      textarea {
+        height: 5rem;
+        resize: none;
+      }
+
+      .buttonGroup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          padding: 0.5rem 1rem;
+          border: 1px solid var.$primary-color;
+          border-radius: 0.5rem;
+          background-color: var.$background-color;
+          font: inherit;
+          transition: background-color 0.25s ease-in-out;
+
+          &:hover,
+          &:focus {
+            background-color: darken(var.$background-color, 5%);
+          }
+
+          &:last-child {
+            margin-left: 0.5rem;
+            background-color: var.$primary-color;
+
+            &:hover,
+            &:focus {
+              background-color: darken(var.$primary-color, 5%);
+            }
+          }
+        }
+
+        @media #{var.$screen-tablet} {
+          & {
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+  }
+}

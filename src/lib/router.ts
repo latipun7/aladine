@@ -61,6 +61,10 @@ class Router {
   navigate(path: string) {
     this.router.navigate(path);
   }
+
+  resolve(path?: string) {
+    this.router.resolve(path);
+  }
 }
 
 export default Router;

@@ -2,6 +2,7 @@ export type Styles = {
   addButton: string;
   buttonGroup: string;
   container: string;
+  error: string;
   overlay: string;
 };
 

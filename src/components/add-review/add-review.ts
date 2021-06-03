@@ -1,6 +1,7 @@
 import addIcon from 'assets/icons/add-list.svg';
 import RestaurantAPI from 'lib/restaurant-api';
-import { parseTemplate } from 'utils';
+import Router from 'lib/router';
+import { clearAllChild, parseTemplate } from 'utils';
 import type { AddCustomerReview } from 'lib/restaurant-api';
 
 import htmlString from './add-review.html';
@@ -10,6 +11,7 @@ type HTMLString = {
   addButtonStyle: string;
   addIcon: string;
   overlayStyle: string;
+  errorStyle: string;
   containerStyle: string;
   buttonGroupStyle: string;
 };
@@ -25,6 +27,8 @@ class AddReview extends HTMLElement {
 
   formElement: HTMLFormElement | null;
 
+  errorElement: HTMLDivElement | null;
+
   constructor(private restaurantID: string) {
     super();
 
@@ -32,6 +36,7 @@ class AddReview extends HTMLElement {
     this.render();
     this.addButtonElement = this.querySelector(`.${styles.addButton}`);
     this.overlayElement = this.querySelector(`.${styles.overlay}`);
+    this.errorElement = this.querySelector(`.${styles.error}`);
     this.formElement = this.querySelector('form');
     this.cancelButtonElement = this.querySelector('button[type="reset"]');
     this.submitButtonElement = this.querySelector('button[type="submit"]');
@@ -50,21 +55,25 @@ class AddReview extends HTMLElement {
 
       const data = AddReview.convertFormDataToObject(this.formElement);
       const api = new RestaurantAPI();
+      const router = new Router();
 
       data.id = this.restaurantID;
 
       try {
-        const response = await api.addReview(data);
+        await api.addReview(data);
 
-        if (this.overlayElement) {
+        if (this.overlayElement && this.errorElement) {
           this.overlayElement.style.visibility = 'hidden';
           this.overlayElement.style.opacity = '0';
+          this.errorElement.style.display = 'none';
         }
 
-        console.log(response);
+        router.resolve();
       } catch (error) {
-        if (error instanceof Error) {
-          console.log(error.message);
+        if (error instanceof Error && this.errorElement) {
+          clearAllChild(this.errorElement);
+          this.errorElement.innerText = error.message;
+          this.errorElement.style.display = 'block';
         }
       }
     }
@@ -78,9 +87,10 @@ class AddReview extends HTMLElement {
   }
 
   handleCancelClick() {
-    if (this.overlayElement) {
+    if (this.overlayElement && this.errorElement) {
       this.overlayElement.style.visibility = 'hidden';
       this.overlayElement.style.opacity = '0';
+      this.errorElement.style.display = 'none';
     }
   }
 
@@ -124,6 +134,7 @@ class AddReview extends HTMLElement {
       addButtonStyle: styles.addButton,
       addIcon,
       overlayStyle: styles.overlay,
+      errorStyle: styles.error,
       containerStyle: styles.container,
       buttonGroupStyle: styles.buttonGroup,
     });

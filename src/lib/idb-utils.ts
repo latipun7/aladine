@@ -64,6 +64,10 @@ export async function addOrUpdateToStore(
   }
 }
 
+export async function getAllFromStore(store: 'keyval'): Promise<string[]>;
+export async function getAllFromStore(
+  store: Exclude<StoreNames<AladineDB>, 'keyval'>
+): Promise<Restaurant[]>;
 export async function getAllFromStore(store: StoreNames<AladineDB>) {
   try {
     const db = await openDBStore();

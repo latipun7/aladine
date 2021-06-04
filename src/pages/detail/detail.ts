@@ -5,7 +5,12 @@ import AddReview from 'components/add-review';
 import FavoriteButton from 'components/favorite-button';
 import Review from 'components/review';
 import RestaurantAPI from 'lib/restaurant-api';
-import { clearAllChild, parseTemplate } from 'utils';
+import {
+  calculateStarRatingPercentage,
+  clearAllChild,
+  parseTemplate,
+  showErrorMessageElement,
+} from 'utils';
 
 import htmlDetailString from './detail.html';
 import styles from './detail.module.scss';
@@ -44,6 +49,15 @@ class Detail extends HTMLElement {
 
     this.restaurantID = restaurantID;
     this.render();
+  }
+
+  private fillStarRating(rating: number) {
+    const percentageRounded = calculateStarRatingPercentage(rating);
+    const starFillElement = this.querySelector<HTMLDivElement>(
+      `.${styles.starFill}`
+    );
+
+    if (starFillElement) starFillElement.style.width = `${percentageRounded}%`;
   }
 
   async connectedCallback() {
@@ -111,24 +125,9 @@ class Detail extends HTMLElement {
       this.appendChild(addReview);
     } catch (error) {
       if (error instanceof Error) {
-        const paragraphElement = document.createElement('p');
-
-        clearAllChild(this);
-        paragraphElement.classList.add(styles.error);
-        paragraphElement.innerText = error.message;
-        this.appendChild(paragraphElement);
+        showErrorMessageElement(this, error.message, styles.error);
       }
     }
-  }
-
-  fillStarRating(rating: number) {
-    const starWidthPercentage = (rating / 5) * 100;
-    const percentageRounded = Math.round(starWidthPercentage / 10) * 10;
-    const starFillElement = this.querySelector<HTMLDivElement>(
-      `.${styles.starFill}`
-    );
-
-    if (starFillElement) starFillElement.style.width = `${percentageRounded}%`;
   }
 
   render() {

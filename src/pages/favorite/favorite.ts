@@ -1,7 +1,11 @@
 import Card from 'components/card';
 import { getAllFromStore } from 'lib/idb-utils';
-import { parseTemplate, clearAllChild, isEmpty } from 'utils';
-import type { Restaurant } from 'lib/restaurant-api';
+import {
+  clearAllChild,
+  isEmpty,
+  parseTemplate,
+  showErrorMessageElement,
+} from 'utils';
 
 import htmlString from './favorite.html';
 import styles from './favorite.module.scss';
@@ -12,7 +16,7 @@ type HTMLString = {
 };
 
 class Favorite extends HTMLElement {
-  gridContainer: HTMLDivElement | null;
+  private gridContainer: HTMLDivElement | null;
 
   constructor() {
     super();
@@ -21,37 +25,25 @@ class Favorite extends HTMLElement {
     this.gridContainer = this.querySelector(`.${styles.gridContainer}`);
   }
 
-  static isListOfRestaurant(list: unknown[]): list is Restaurant[] {
-    if (isEmpty(list)) {
-      throw new Error("You don't have favorite restaurant.");
-    }
-    return (list[0] as Restaurant).name !== 'undefined';
-  }
-
   async connectedCallback() {
     try {
       const restaurants = await getAllFromStore('favorite');
 
-      if (Favorite.isListOfRestaurant(restaurants)) {
+      if (isEmpty(restaurants)) {
+        throw new Error("You don't have favorite restaurant.");
+      } else {
         clearAllChild(this.gridContainer);
         this.gridContainer?.classList.remove(`${styles.isLoading}`);
 
         restaurants.forEach((restaurant) => {
-          const card = new Card();
+          const card = new Card(restaurant);
 
-          card.dataRestaurant = restaurant;
           this.gridContainer?.appendChild(card);
         });
-      } else {
-        throw new Error('Sorry. Something went wrong.');
       }
     } catch (error) {
       if (error instanceof Error) {
-        const paragraphElement = document.createElement('p');
-
-        clearAllChild(this.gridContainer);
-        paragraphElement.innerText = error.message;
-        this.gridContainer?.appendChild(paragraphElement);
+        showErrorMessageElement(this.gridContainer, error.message);
       }
     }
   }

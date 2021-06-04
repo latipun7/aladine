@@ -18,9 +18,9 @@ function truncateWords(paragraph: string, maxCharacter: number): string {
  * @param mapping Map HTML mustache template `{{key}}` to valid string value
  * @returns HTML Template Element
  */
-function parseTemplate<T extends Record<string, string>>(
+function parseTemplate<Type extends Record<string, string>>(
   templateString: string,
-  mapping?: T
+  mapping?: Type
 ): HTMLTemplateElement {
   const template = document.createElement('template');
   let processedTemplateString = templateString;
@@ -40,12 +40,12 @@ function parseTemplate<T extends Record<string, string>>(
 }
 
 /**
- * Clear all child of a root / wrapper element
- * @param rootElement Root / wrapper element that the child want to clear
+ * Clear all child of a parent element
+ * @param parentElement Parent element that the child want to clear
  */
-function clearAllChild(rootElement: HTMLElement | null) {
-  while (rootElement?.firstChild) {
-    rootElement.removeChild(rootElement.firstChild);
+function clearAllChild(parentElement: HTMLElement | null) {
+  while (parentElement?.firstChild) {
+    parentElement.removeChild(parentElement.firstChild);
   }
 }
 
@@ -60,4 +60,42 @@ function isEmpty(
   return !Object.entries(value || {}).length;
 }
 
-export { truncateWords, parseTemplate, clearAllChild, isEmpty };
+/**
+ * @param rating Float number rating of 5
+ * @returns Rating percentage rounded
+ */
+function calculateStarRatingPercentage(rating: number | undefined) {
+  const processedRating = rating || 0;
+  const starWidthPercentage = (processedRating / 5) * 100;
+  const percentageRounded = Math.round(starWidthPercentage / 10) * 10;
+
+  return percentageRounded;
+}
+
+/**
+ * Show error message element to the parent element
+ * @param parentElement Parent element of this message to append
+ * @param message Error message to show
+ * @param style Optional style for this message element
+ */
+function showErrorMessageElement(
+  parentElement: HTMLElement | null,
+  message: string,
+  style?: string
+) {
+  const paragraphElement = document.createElement('p');
+
+  clearAllChild(parentElement);
+  if (style) paragraphElement.classList.add(style);
+  paragraphElement.innerText = message;
+  parentElement?.appendChild(paragraphElement);
+}
+
+export {
+  calculateStarRatingPercentage,
+  clearAllChild,
+  isEmpty,
+  parseTemplate,
+  showErrorMessageElement,
+  truncateWords,
+};

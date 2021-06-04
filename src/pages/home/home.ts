@@ -1,6 +1,6 @@
 import Card from 'components/card';
 import RestaurantAPI from 'lib/restaurant-api';
-import { parseTemplate, clearAllChild } from 'utils';
+import { clearAllChild, parseTemplate, showErrorMessageElement } from 'utils';
 
 import htmlString from './home.html';
 import styles from './home.module.scss';
@@ -11,7 +11,7 @@ type HTMLString = {
 };
 
 class Home extends HTMLElement {
-  gridContainer: HTMLDivElement | null;
+  private gridContainer: HTMLDivElement | null;
 
   constructor() {
     super();
@@ -29,18 +29,13 @@ class Home extends HTMLElement {
       this.gridContainer?.classList.remove(`${styles.isLoading}`);
 
       restaurants.forEach((restaurant) => {
-        const card = new Card();
+        const card = new Card(restaurant);
 
-        card.dataRestaurant = restaurant;
         this.gridContainer?.appendChild(card);
       });
     } catch (error) {
       if (error instanceof Error) {
-        const paragraphElement = document.createElement('p');
-
-        clearAllChild(this.gridContainer);
-        paragraphElement.innerText = error.message;
-        this.gridContainer?.appendChild(paragraphElement);
+        showErrorMessageElement(this.gridContainer, error.message);
       }
     }
   }

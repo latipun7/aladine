@@ -3,13 +3,15 @@ import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
 import RestaurantAPI from 'lib/restaurant-api';
 import Router from 'lib/router';
-import { clearAllChild, parseTemplate, truncateWords } from 'utils';
+import {
+  calculateStarRatingPercentage,
+  parseTemplate,
+  truncateWords,
+} from 'utils';
 import type { Restaurant } from 'lib/restaurant-api';
 
 import htmlString from './card.html';
 import styles from './card.module.scss';
-
-type Data = Restaurant | null;
 
 type HTMLString = {
   cardContainerStyle: string;
@@ -35,25 +37,15 @@ type HTMLString = {
 };
 
 class Card extends HTMLElement {
-  data: Data;
-
-  constructor() {
+  constructor(private data: Restaurant) {
     super();
 
-    this.data = null;
+    this.data = data;
     this.render();
   }
 
-  set dataRestaurant(value: Data) {
-    this.data = value;
-    clearAllChild(this);
-    this.render();
-  }
-
-  fillStarRating() {
-    const rating = this.data?.rating ? this.data?.rating : 0;
-    const starWidthPercentage = (rating / 5) * 100;
-    const percentageRounded = Math.round(starWidthPercentage / 10) * 10;
+  private fillStarRating() {
+    const percentageRounded = calculateStarRatingPercentage(this.data?.rating);
     const starFillElement = this.querySelector<HTMLDivElement>(
       `.${styles.starFill}`
     );
@@ -61,15 +53,13 @@ class Card extends HTMLElement {
     if (starFillElement) starFillElement.style.width = `${percentageRounded}%`;
   }
 
-  handleClick(event: MouseEvent) {
+  private handleClick(event: MouseEvent) {
     const router = new Router();
 
     event.preventDefault();
     if (this.data && (event.target as HTMLElement).matches('a')) {
       router.navigate(`/restaurant/${this.data.id}`);
     }
-
-    return false;
   }
 
   connectedCallback() {

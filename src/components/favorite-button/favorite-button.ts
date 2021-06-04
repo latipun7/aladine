@@ -1,10 +1,10 @@
 import heartOutlineIcon from 'assets/icons/heart.svg';
 import heartFillIcon from 'assets/icons/heart-fill.svg';
-import { parseTemplate, clearAllChild } from 'utils';
+import { clearAllChild, parseTemplate } from 'utils';
 import {
-  getOneFromStore,
   addOrUpdateToStore,
   deleteFromStore,
+  getOneFromStore,
 } from 'lib/idb-utils';
 import type { Restaurant } from 'lib/restaurant-api';
 
@@ -30,19 +30,29 @@ class FavoriteButton extends HTMLElement {
     this.buttonElement = this.querySelector('button');
   }
 
-  async handleClick() {
+  private showHeartOutlineIcon() {
     if (this.buttonElement) {
-      if (this.favoriteRestaurant) {
-        await deleteFromStore('favorite', this.restaurant.id);
-        this.buttonElement.innerHTML = heartOutlineIcon;
-        this.buttonElement.title = 'Add to favorite';
-        this.favoriteRestaurant = undefined;
-      } else {
-        await addOrUpdateToStore('favorite', this.restaurant);
-        this.buttonElement.innerHTML = heartFillIcon;
-        this.buttonElement.title = 'Remove from favorite';
-        this.favoriteRestaurant = this.restaurant;
-      }
+      this.buttonElement.innerHTML = heartOutlineIcon;
+      this.buttonElement.title = 'Add to favorite';
+    }
+  }
+
+  private showHeartFillIcon() {
+    if (this.buttonElement) {
+      this.buttonElement.innerHTML = heartFillIcon;
+      this.buttonElement.title = 'Remove from favorite';
+    }
+  }
+
+  private async handleClick() {
+    if (this.favoriteRestaurant) {
+      await deleteFromStore('favorite', this.restaurant.id);
+      this.favoriteRestaurant = undefined;
+      this.showHeartOutlineIcon();
+    } else {
+      await addOrUpdateToStore('favorite', this.restaurant);
+      this.favoriteRestaurant = this.restaurant;
+      this.showHeartFillIcon();
     }
   }
 
@@ -52,14 +62,10 @@ class FavoriteButton extends HTMLElement {
       this.restaurant.id
     );
 
-    if (this.buttonElement) {
-      if (this.favoriteRestaurant) {
-        this.buttonElement.innerHTML = heartFillIcon;
-        this.buttonElement.title = 'Remove from favorite';
-      } else {
-        this.buttonElement.innerHTML = heartOutlineIcon;
-        this.buttonElement.title = 'Add to favorite';
-      }
+    if (this.favoriteRestaurant) {
+      this.showHeartFillIcon();
+    } else {
+      this.showHeartOutlineIcon();
     }
 
     this.addEventListener('click', this.handleClick.bind(this));

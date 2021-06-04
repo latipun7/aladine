@@ -1,4 +1,4 @@
-import { parseTemplate } from 'utils';
+import { clearAllChild, parseTemplate } from 'utils';
 import type { CustomerReview } from 'lib/restaurant-api';
 
 import htmlString from './review.html';
@@ -30,6 +30,7 @@ class Review extends HTMLElement {
       reviewData: data.review,
     });
 
+    clearAllChild(this);
     this.appendChild(template.content);
   }
 }

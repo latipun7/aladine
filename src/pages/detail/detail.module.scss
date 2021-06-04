@@ -1,8 +1,10 @@
 @use '../../styles/variables' as var;
-@use '../card/card.module.scss';
+@use '../../components/card/card.module';
 @use '../../styles/animation';
 
 .this {
+  min-height: 85vh;
+
   .loading {
     @include animation.loader;
     height: 3rem;

@@ -12,11 +12,11 @@ type HTMLString = {
 };
 
 class Menu extends HTMLElement {
-  menuLinksElement: HTMLUListElement | null;
+  private menuLinksElement: HTMLUListElement | null;
 
-  menuButtonElement: HTMLButtonElement | null;
+  private menuButtonElement: HTMLButtonElement | null;
 
-  menuLinkElements: NodeListOf<HTMLLIElement>;
+  private menuLinkElements: NodeListOf<HTMLLIElement>;
 
   constructor() {
     super();
@@ -27,42 +27,18 @@ class Menu extends HTMLElement {
     this.menuLinkElements = this.querySelectorAll('li');
   }
 
-  static get observedAttributes() {
-    return ['opened'];
-  }
+  private handleClickOutside({ target }: MouseEvent) {
+    const notMenuLinksTarget = !this.menuLinksElement?.contains(target as Node);
+    const notMenuButtonTarget = !this.menuButtonElement?.contains(
+      target as Node
+    );
 
-  set opened(value: boolean) {
-    const isOpened = value;
-    if (isOpened) this.setAttribute('opened', '');
-    else this.removeAttribute('opened');
-  }
-
-  get opened() {
-    return this.hasAttribute('opened');
-  }
-
-  attributeChangedCallback(_: string, __: string, newValue: string) {
-    const hasValue = newValue !== null;
-
-    if (hasValue) {
-      this.menuLinksElement?.classList.add(styles.open);
-      this.menuButtonElement?.classList.add(styles.open);
-    } else {
-      this.menuLinksElement?.classList.remove(styles.open);
-      this.menuButtonElement?.classList.remove(styles.open);
-    }
-  }
-
-  handleClickOutside({ target }: MouseEvent) {
-    const notMenuLinks = !this.menuLinksElement?.contains(target as Node);
-    const notMenuButton = !this.menuButtonElement?.contains(target as Node);
-
-    if (notMenuLinks && notMenuButton) {
+    if (notMenuLinksTarget && notMenuButtonTarget) {
       this.opened = false;
     }
   }
 
-  scrollEvent() {
+  private scrollEvent() {
     const navElement = this.querySelector('nav');
     const footerElement = document.querySelector('footer');
     const scrollPosition = window.scrollY;
@@ -87,13 +63,38 @@ class Menu extends HTMLElement {
     }
   }
 
-  handleToggleMenu() {
+  private handleToggleMenu() {
     this.opened = !this.opened;
     this.menuButtonElement?.classList.remove(`${styles.bottom}`);
   }
 
-  handleClickMenuLink() {
+  private handleClickMenuLink() {
     this.opened = false;
+  }
+
+  set opened(isOpened: boolean) {
+    if (isOpened) this.setAttribute('opened', '');
+    else this.removeAttribute('opened');
+  }
+
+  get opened() {
+    return this.hasAttribute('opened');
+  }
+
+  static get observedAttributes() {
+    return ['opened'];
+  }
+
+  attributeChangedCallback(_: string, __: string, newValue: string) {
+    const hasValue = newValue !== null;
+
+    if (hasValue) {
+      this.menuLinksElement?.classList.add(styles.open);
+      this.menuButtonElement?.classList.add(styles.open);
+    } else {
+      this.menuLinksElement?.classList.remove(styles.open);
+      this.menuButtonElement?.classList.remove(styles.open);
+    }
   }
 
   connectedCallback() {

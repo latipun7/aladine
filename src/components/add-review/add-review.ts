@@ -17,17 +17,17 @@ type HTMLString = {
 };
 
 class AddReview extends HTMLElement {
-  addButtonElement: HTMLButtonElement | null;
+  private addButtonElement: HTMLButtonElement | null;
 
-  overlayElement: HTMLDivElement | null;
+  private overlayElement: HTMLDivElement | null;
 
-  cancelButtonElement: HTMLButtonElement | null;
+  private cancelButtonElement: HTMLButtonElement | null;
 
-  submitButtonElement: HTMLButtonElement | null;
+  private submitButtonElement: HTMLButtonElement | null;
 
-  formElement: HTMLFormElement | null;
+  private formElement: HTMLFormElement | null;
 
-  errorElement: HTMLDivElement | null;
+  private errorElement: HTMLDivElement | null;
 
   constructor(private restaurantID: string) {
     super();
@@ -42,56 +42,65 @@ class AddReview extends HTMLElement {
     this.submitButtonElement = this.querySelector('button[type="submit"]');
   }
 
-  static convertFormDataToObject(form: HTMLFormElement) {
+  private convertFormDataToObject(form: HTMLFormElement) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData) as AddCustomerReview;
+
+    data.id = this.restaurantID;
 
     return data;
   }
 
-  async handleSubmitClick(event: MouseEvent) {
-    if (this.formElement && this.formElement.checkValidity()) {
-      event.preventDefault();
-
-      const data = AddReview.convertFormDataToObject(this.formElement);
-      const api = new RestaurantAPI();
-      const router = new Router();
-
-      data.id = this.restaurantID;
-
-      try {
-        await api.addReview(data);
-
-        if (this.overlayElement && this.errorElement) {
-          this.overlayElement.style.visibility = 'hidden';
-          this.overlayElement.style.opacity = '0';
-          this.errorElement.style.display = 'none';
-        }
-
-        router.resolve();
-      } catch (error) {
-        if (error instanceof Error && this.errorElement) {
-          clearAllChild(this.errorElement);
-          this.errorElement.innerText = error.message;
-          this.errorElement.style.display = 'block';
-        }
-      }
+  private hideFormOverlay() {
+    if (this.overlayElement && this.errorElement) {
+      this.overlayElement.style.visibility = 'hidden';
+      this.overlayElement.style.opacity = '0';
+      this.errorElement.style.display = 'none';
     }
   }
 
-  handleAddClick() {
+  private showFormOverlay() {
     if (this.overlayElement) {
       this.overlayElement.style.visibility = 'visible';
       this.overlayElement.style.opacity = '1';
     }
   }
 
-  handleCancelClick() {
-    if (this.overlayElement && this.errorElement) {
-      this.overlayElement.style.visibility = 'hidden';
-      this.overlayElement.style.opacity = '0';
-      this.errorElement.style.display = 'none';
+  private showSubmitError(error: Error) {
+    if (this.errorElement) {
+      clearAllChild(this.errorElement);
+      this.errorElement.innerText = error.message;
+      this.errorElement.style.display = 'block';
     }
+  }
+
+  private async handleSubmitClick(event: MouseEvent) {
+    if (this.formElement && this.formElement.checkValidity()) {
+      event.preventDefault();
+
+      try {
+        const api = new RestaurantAPI();
+        const router = new Router();
+        const data = this.convertFormDataToObject(this.formElement);
+
+        await api.addReview(data);
+
+        this.hideFormOverlay();
+        router.resolve();
+      } catch (error) {
+        if (error instanceof Error) {
+          this.showSubmitError(error);
+        }
+      }
+    }
+  }
+
+  private handleAddClick() {
+    this.showFormOverlay();
+  }
+
+  private handleCancelClick() {
+    this.hideFormOverlay();
   }
 
   connectedCallback() {

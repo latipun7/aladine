@@ -14,7 +14,7 @@ class ScrollToTop extends HTMLElement {
     this.render();
   }
 
-  scrollEvent() {
+  private scrollEvent() {
     const buttonElement = this.querySelector('button');
     const footerElement = document.querySelector('footer');
     const scrollPosition = window.scrollY;
@@ -39,7 +39,7 @@ class ScrollToTop extends HTMLElement {
     }
   }
 
-  static handleScrollToTop(this: void) {
+  private static handleScrollToTop(this: void) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

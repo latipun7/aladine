@@ -2,7 +2,6 @@ export type Styles = {
   city: string;
   container: string;
   error: string;
-  favoriteButton: string;
   flail: string;
   header: string;
   loading: string;

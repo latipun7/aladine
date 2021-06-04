@@ -3,7 +3,7 @@
 @use '../../styles/animation';
 
 .this {
-  min-height: 85vh;
+  min-height: 70vh;
 
   .loading {
     @include animation.loader;
@@ -20,41 +20,6 @@
 
 .container {
   width: 100%;
-
-  .header {
-    .favoriteButton {
-      border: none;
-      position: absolute;
-      bottom: -1.25rem;
-      right: 1rem;
-      border-radius: 50%;
-      color: hsl(0, 70%, 32%);
-      background-color: var.$primary-color;
-      padding: 0.75rem;
-      height: 3rem;
-      width: 3rem;
-      box-shadow: var.$shadow;
-      transition: background-color 0.25s ease-in-out,
-        box-shadow 0.25s ease-in-out, bottom 0.25s ease-in-out;
-
-      &:hover {
-        background-color: darken(var.$primary-color, 5%);
-        box-shadow: 0 0 1px 1px var.$shadow-color;
-      }
-
-      @media #{var.$screen-tablet} {
-        & {
-          right: 2rem;
-        }
-      }
-
-      @media #{var.$screen-laptop} {
-        & {
-          right: 3rem;
-        }
-      }
-    }
-  }
 
   .title {
     color: var.$secondary-color;

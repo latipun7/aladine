@@ -79,6 +79,14 @@ export async function getAllFromStore(store: StoreNames<AladineDB>) {
 }
 
 export async function getOneFromStore(
+  store: 'keyval',
+  key: string
+): Promise<string | undefined>;
+export async function getOneFromStore(
+  store: Exclude<StoreNames<AladineDB>, 'keyval'>,
+  key: string
+): Promise<Restaurant | undefined>;
+export async function getOneFromStore(
   store: StoreNames<AladineDB>,
   key: string
 ) {

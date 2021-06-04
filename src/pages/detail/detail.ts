@@ -1,9 +1,8 @@
 import mapMarkerIcon from 'assets/icons/map-marker.svg';
 import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
-import heartOutlineIcon from 'assets/icons/heart.svg';
-// import heartFillIcon from 'assets/icons/heart-fill.svg';
 import AddReview from 'components/add-review';
+import FavoriteButton from 'components/favorite-button';
 import Review from 'components/review';
 import RestaurantAPI from 'lib/restaurant-api';
 import { clearAllChild, parseTemplate } from 'utils';
@@ -16,8 +15,6 @@ type HTMLString = Partial<{
   detailHeaderStyle: string;
   pictureIdData: string;
   pictureNameData: string;
-  favoriteButtonStyle: string;
-  heartIcon: string;
   cityStyle: string;
   flailStyle: string;
   mapMarkerIcon: string;
@@ -54,14 +51,11 @@ class Detail extends HTMLElement {
       const api = new RestaurantAPI();
       const { restaurant } = await api.getDetail(this.restaurantID);
       const image = api.pictureLink(restaurant.pictureId, 'large');
-      const heartIcon = heartOutlineIcon;
       const template = parseTemplate<HTMLString>(htmlDetailString, {
         detailContainerStyle: styles.container,
         detailHeaderStyle: styles.header,
         pictureIdData: image,
         pictureNameData: restaurant.name,
-        favoriteButtonStyle: styles.favoriteButton,
-        heartIcon,
         cityStyle: styles.city,
         flailStyle: styles.flail,
         mapMarkerIcon,
@@ -95,8 +89,17 @@ class Detail extends HTMLElement {
       this.appendChild(template.content);
       this.fillStarRating(restaurant.rating);
 
+      const headerElement = this.querySelector(`.${styles.header}`);
       const reviewElement = this.querySelector(`.${styles.reviewContainer}`);
       const addReview = new AddReview(restaurant.id);
+      const favoriteButton = new FavoriteButton({
+        city: restaurant.city,
+        description: restaurant.description,
+        id: restaurant.id,
+        name: restaurant.name,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
+      });
 
       restaurant.customerReviews.forEach((review) => {
         const reviewComponent = new Review(review);
@@ -104,6 +107,7 @@ class Detail extends HTMLElement {
         reviewElement?.appendChild(reviewComponent);
       });
 
+      headerElement?.appendChild(favoriteButton);
       this.appendChild(addReview);
     } catch (error) {
       if (error instanceof Error) {

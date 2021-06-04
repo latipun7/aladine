@@ -2,6 +2,7 @@ import Navigo from 'navigo';
 import Detail from 'components/detail';
 import Menu from 'components/menu';
 import Hero from 'components/hero';
+import Favorite from 'pages/favorite';
 import Home from 'pages/home';
 import NotFound from 'components/not-found';
 import { clearAllChild } from 'utils';
@@ -44,6 +45,9 @@ class Router {
       .on('/restaurant/:id', (match) => {
         if (match && match.data) Router.inject(new Detail(match.data.id));
         // TODO: else, inject site-error. (something went wrong)
+      })
+      .on('/favorite', () => {
+        Router.inject(new Favorite());
       })
       .on('/', () => {
         Router.inject(new Home());

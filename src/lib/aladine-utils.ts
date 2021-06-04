@@ -49,4 +49,15 @@ function clearAllChild(rootElement: HTMLElement | null) {
   }
 }
 
-export { truncateWords, parseTemplate, clearAllChild };
+/**
+ * Check if value is empty. Empty is `[]`, `{}`, `''`, `null`, and `undefined`.
+ * @param value Value to check
+ * @returns boolean
+ */
+function isEmpty(
+  value: string | unknown[] | Record<string, unknown> | null | undefined
+) {
+  return !Object.entries(value || {}).length;
+}
+
+export { truncateWords, parseTemplate, clearAllChild, isEmpty };

@@ -1,0 +1,29 @@
+@use '../../styles/variables' as var;
+@use '../../styles/animation';
+
+main {
+  h1 {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem auto;
+    font: 1.5rem/1 var.$headline-font-family;
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 18rem);
+    gap: 1.5rem;
+    justify-content: center;
+    align-content: center;
+
+    &.isLoading {
+      display: flex;
+    }
+  }
+
+  .loading {
+    @include animation.loader;
+    height: 3rem;
+    width: 3rem;
+  }
+}

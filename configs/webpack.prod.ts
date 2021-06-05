@@ -8,6 +8,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { EnvironmentPlugin } from 'webpack';
 import type { Configuration } from 'webpack';
 
+import AppConfig from './app.config';
 import { buildDir, srcDir } from './paths';
 
 const babelLoader = {
@@ -34,7 +35,7 @@ const prod = async (): Promise<Configuration> => ({
   output: {
     path: buildDir,
     filename: 'scripts/[name]-[contenthash:8].js',
-    publicPath: 'https://latipun7.github.io/aladine/',
+    publicPath: AppConfig.productionPublicPath,
   },
   optimization: {
     minimize: true,

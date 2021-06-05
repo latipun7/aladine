@@ -6,6 +6,7 @@ import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import { GenerateSW } from 'workbox-webpack-plugin';
 import type { Configuration } from 'webpack';
 
+import AppConfig from './app.config';
 import { buildDir, publicDir, resolvePath } from './paths';
 
 const common: Configuration = {
@@ -41,13 +42,13 @@ const common: Configuration = {
       inject: false,
       scriptLoading: 'defer',
       cache: false,
-      title: 'à La Dine',
+      title: AppConfig.name,
       meta: {
         viewport: 'width=device-width, initial-scale=1',
-        title: 'à La Dine',
-        'application-name': 'à La Dine',
+        title: AppConfig.name,
+        'application-name': AppConfig.name,
         'theme-color': '#08d9d6',
-        description: 'Dine away the easy way 🍽😋',
+        description: AppConfig.description,
         robots: 'index, follow',
         googlebot: 'index, follow',
         language: 'English',
@@ -56,28 +57,31 @@ const common: Configuration = {
         'twitter:site': '@_latipun7',
         'twitter:creator': '@_latipun7',
         'twitter:url': 'https://latipun7.github.io/aladine/',
-        'twitter:title': 'à La Dine',
-        'twitter:description': 'Dine away the easy way 🍽😋',
+        'twitter:title': AppConfig.name,
+        'twitter:description': AppConfig.description,
         'twitter:image':
           'https://latipun7.github.io/aladine/assets/android-chrome-512x512.png',
-        'twitter:image:alt': 'à La Dine logo',
+        'twitter:image:alt': `${AppConfig.name} logo`,
         ogURL: {
           property: 'og:url',
           content: 'https://latipun7.github.io/aladine/',
         },
         ogType: { property: 'og:type', content: 'website' },
-        ogTitle: { property: 'og:title', content: 'à La Dine' },
+        ogTitle: { property: 'og:title', content: AppConfig.name },
         ogImage: {
           property: 'og:image',
           content:
             'https://latipun7.github.io/aladine/assets/android-chrome-512x512.png',
         },
-        ogImageAlt: { property: 'og:image:alt', content: 'à La Dine logo' },
+        ogImageAlt: {
+          property: 'og:image:alt',
+          content: `${AppConfig.name} logo`,
+        },
         ogDesc: {
           property: 'og:description',
-          content: 'Dine away the easy way 🍽😋',
+          content: AppConfig.description,
         },
-        ogSiteName: { property: 'og:site_name', content: 'à La Dine' },
+        ogSiteName: { property: 'og:site_name', content: AppConfig.name },
         ogLocale: { property: 'og:locale', content: 'en_US' },
       },
     }),
@@ -87,9 +91,9 @@ const common: Configuration = {
       inject: true,
       manifest: resolvePath('src', 'assets', 'app.webmanifest'),
       favicons: {
-        appName: 'à La Dine',
-        appShortName: 'à La Dine',
-        appDescription: 'Dine away the easy way 🍽😋',
+        appName: AppConfig.name,
+        appShortName: AppConfig.name,
+        appDescription: AppConfig.description,
         theme_color: '#08d9d6',
         background: '#eaeaea',
         start_url: 'https://latipun7.github.io/aladine/',

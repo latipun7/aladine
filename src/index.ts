@@ -1,3 +1,4 @@
+import { getPublicPath } from 'lib/aladine-utils';
 import 'styles/index.scss';
 
 import app from './app';
@@ -8,6 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
-    await navigator.serviceWorker.register('/service-worker.js');
+    const publicPath = getPublicPath();
+
+    await navigator.serviceWorker.register(`${publicPath}service-worker.js`);
   });
 }

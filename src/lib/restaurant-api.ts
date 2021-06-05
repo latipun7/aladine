@@ -72,7 +72,7 @@ class RestaurantAPI {
     });
   }
 
-  static #handleError(error: unknown) {
+  private static handleError(error: unknown) {
     if (axios.isAxiosError<Response>(error)) {
       if (error.response) {
         throw new Error(error.response.data.message);
@@ -94,7 +94,7 @@ class RestaurantAPI {
 
       return data;
     } catch (error) {
-      throw RestaurantAPI.#handleError(error);
+      throw RestaurantAPI.handleError(error);
     }
   }
 
@@ -104,7 +104,7 @@ class RestaurantAPI {
 
       return data;
     } catch (error) {
-      throw RestaurantAPI.#handleError(error);
+      throw RestaurantAPI.handleError(error);
     }
   }
 
@@ -120,7 +120,7 @@ class RestaurantAPI {
 
       return data;
     } catch (error) {
-      throw RestaurantAPI.#handleError(error);
+      throw RestaurantAPI.handleError(error);
     }
   }
 
@@ -130,7 +130,7 @@ class RestaurantAPI {
 
       return data;
     } catch (error) {
-      throw RestaurantAPI.#handleError(error);
+      throw RestaurantAPI.handleError(error);
     }
   }
 

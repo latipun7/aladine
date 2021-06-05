@@ -74,8 +74,7 @@
     overflow-y: auto;
     font-size: 1.25rem;
     list-style: none;
-    transition: opacity 0.25s 0.25s ease-in-out,
-      visibility 0.25s 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
     z-index: 97;
 
     &.open {
@@ -113,66 +112,64 @@
   }
 
   @media #{var.$screen-laptop} {
-    & {
-      position: fixed;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    height: 5.5rem;
+    transition: height 0.25s ease-in-out, background-color 0.25s ease-in-out;
+    z-index: 98;
+
+    .menuButton {
+      display: none;
+    }
+
+    .menuLinks {
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+      transition: none;
+      bottom: auto;
+      right: auto;
       display: flex;
-      justify-content: space-around;
-      justify-items: center;
-      height: 5.5rem;
-      transition: height 0.25s ease-in-out, background-color 0.25s ease-in-out;
-      z-index: 98;
+      justify-content: space-evenly;
 
-      .menuButton {
-        display: none;
-      }
+      .menuLink {
+        margin: 0 auto;
+        background-color: inherit;
+        border-radius: 0;
+        box-shadow: none;
+        transition: color 0.5s ease-in-out;
+        color: invert(var.$color);
 
-      .menuLinks {
-        visibility: visible;
-        opacity: 1;
-        position: relative;
-        transition: none;
-        bottom: auto;
-        right: auto;
-        display: flex;
-        justify-content: space-evenly;
-
-        .menuLink {
-          margin: 0 auto;
-          background-color: inherit;
+        a {
+          padding: 1rem 1.5rem;
           border-radius: 0;
-          box-shadow: none;
-          transition: color 0.5s ease-in-out;
-          color: invert(var.$color);
 
-          a {
-            padding: 1rem 1.5rem;
-            border-radius: 0;
-
-            &.active,
-            &:hover,
-            &:focus {
-              background-color: hsla(0, 100%, 100%, 0.2);
-              box-shadow: none;
-            }
+          &.active,
+          &:hover,
+          &:focus {
+            background-color: hsla(0, 100%, 100%, 0.2);
+            box-shadow: none;
           }
         }
       }
+    }
 
-      &.scrolled {
-        height: 4rem;
-        background-color: var.$background-color;
-        box-shadow: var.$shadow;
+    &.scrolled {
+      height: 4rem;
+      background-color: var.$background-color;
+      box-shadow: var.$shadow;
 
-        .logo,
-        .menuLink {
-          color: var.$color;
+      .logo,
+      .menuLink {
+        color: var.$color;
 
-          a {
-            &.active,
-            &:hover,
-            &:focus {
-              background-color: hsla(0, 0%, 0%, 0.2);
-            }
+        a {
+          &.active,
+          &:hover,
+          &:focus {
+            background-color: hsla(0, 0%, 0%, 0.2);
           }
         }
       }

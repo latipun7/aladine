@@ -4,17 +4,15 @@
 
 .this {
   min-height: 70vh;
+  justify-content: center;
 
   .loading {
-    @include animation.loader;
-    height: 3rem;
-    width: 3rem;
+    @include animation.loading;
   }
 
   .error {
     font-size: 2rem;
     font-weight: bold;
-    text-align: center;
   }
 }
 
@@ -23,6 +21,7 @@
 
   .title {
     color: var.$secondary-color;
+    font-size: 1.5rem;
 
     &:hover {
       color: adjust-color(
@@ -53,7 +52,7 @@
       padding: 0.5em;
 
       summary {
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid change-color(var.$secondary-color, $alpha: 0.5);
         margin-bottom: 0.5em;
       }
     }

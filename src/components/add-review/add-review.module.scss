@@ -88,6 +88,10 @@
         justify-content: center;
         align-items: center;
 
+        @media #{var.$screen-tablet} {
+          justify-content: flex-end;
+        }
+
         button {
           padding: 0.5rem 1rem;
           border: 1px solid var.$primary-color;
@@ -109,12 +113,6 @@
             &:focus {
               background-color: darken(var.$primary-color, 5%);
             }
-          }
-        }
-
-        @media #{var.$screen-tablet} {
-          & {
-            justify-content: flex-end;
           }
         }
       }

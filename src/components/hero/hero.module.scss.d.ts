@@ -3,7 +3,9 @@ export type Styles = {
   lamp: string;
   lemonade: string;
   pour: string;
+  pulse: string;
   readyToPour: string;
+  spinAround: string;
 };
 
 export type ClassNames = keyof Styles;

@@ -1,6 +1,8 @@
 export type Styles = {
   favoriteButton: string;
   loading: string;
+  pour: string;
+  pulse: string;
   spinAround: string;
 };
 

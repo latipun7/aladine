@@ -28,7 +28,7 @@ const dev = async (): Promise<Configuration> => ({
     contentBase: publicDir,
     watchContentBase: true,
     historyApiFallback: true,
-    overlay: { errors: true, warnings: true },
+    overlay: { errors: true, warnings: false },
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin({

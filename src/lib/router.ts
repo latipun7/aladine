@@ -5,16 +5,39 @@ import Detail from 'pages/detail';
 import Favorite from 'pages/favorite';
 import Home from 'pages/home';
 import NotFound from 'components/not-found';
-import { clearAllChild } from 'utils';
+import { clearAllChild, getPublicPath } from 'utils';
 
 class Router {
   router: Navigo;
 
   constructor() {
-    const isProduction = process.env.NODE_ENV === 'production';
+    const publicPath = getPublicPath();
 
-    this.router = new Navigo(isProduction ? '/aladine/' : '/');
-    this.#defineRoute();
+    this.router = new Navigo(publicPath);
+    this.defineRoute();
+  }
+
+  private defineRoute() {
+    this.router
+      .hooks({
+        before(done) {
+          window.scrollTo({ top: 0 });
+          done();
+        },
+      })
+      .on('/restaurant/:id', (match) => {
+        if (match && match.data) Router.inject(new Detail(match.data.id));
+      })
+      .on('/favorite', () => {
+        Router.inject(new Favorite());
+      })
+      .on('/', () => {
+        Router.inject(new Home());
+        Router.inject(new Hero(), true);
+      })
+      .notFound(() => {
+        Router.inject(new NotFound());
+      });
   }
 
   static inject(component: HTMLElement, inHeader = false) {
@@ -32,30 +55,6 @@ class Router {
       clearAllChild(mainContent);
       mainContent?.appendChild(component);
     }
-  }
-
-  #defineRoute() {
-    this.router
-      .hooks({
-        before(done) {
-          window.scrollTo({ top: 0 });
-          done();
-        },
-      })
-      .on('/restaurant/:id', (match) => {
-        if (match && match.data) Router.inject(new Detail(match.data.id));
-        // TODO: else, inject site-error. (something went wrong)
-      })
-      .on('/favorite', () => {
-        Router.inject(new Favorite());
-      })
-      .on('/', () => {
-        Router.inject(new Home());
-        Router.inject(new Hero(), true);
-      })
-      .notFound(() => {
-        Router.inject(new NotFound());
-      });
   }
 
   init() {

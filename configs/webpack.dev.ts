@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssPresetEnv from 'postcss-preset-env';
 import type { Configuration } from 'webpack';
 
+import AppConfig from './app.config';
 import { buildDir, srcDir, publicDir } from './paths';
 
 const babelLoader = {
@@ -19,7 +20,7 @@ const dev = async (): Promise<Configuration> => ({
   output: {
     path: buildDir,
     filename: 'scripts/[name].js',
-    publicPath: '/',
+    publicPath: AppConfig.developmentPublicPath,
   },
   devServer: {
     hot: true,

@@ -49,6 +49,7 @@
     "@types/webpack-bundle-analyzer": "^4.4.0",
     "@types/webpack-dev-server": "^3.11.4",
     "@types/webpack-env": "^1.16.0",
+    "@types/workbox-webpack-plugin": "^5.1.6",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "babel-jest": "^27.0.2",
@@ -95,7 +96,8 @@
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^5.7.3",
+    "workbox-webpack-plugin": "^6.1.5"
   },
   "browserslist": [
     "defaults"

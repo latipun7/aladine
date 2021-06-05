@@ -1,8 +1,9 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
+import { GenerateSW } from 'workbox-webpack-plugin';
 import type { Configuration } from 'webpack';
 
 import { buildDir, publicDir, resolvePath } from './paths';
@@ -94,6 +95,20 @@ const common: Configuration = {
         start_url: 'https://latipun7.github.io/aladine/',
         display: 'standalone',
       },
+    }),
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /https:\/\/restaurant-api\.dicoding\.dev/i,
+          handler: 'NetworkFirst',
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.(gstatic|googleapis)\.com/i,
+          handler: 'StaleWhileRevalidate',
+        },
+      ],
     }),
   ],
   module: {

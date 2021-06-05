@@ -29,7 +29,6 @@ type HTMLString = Partial<{
   nameData: string;
   ratingStyle: string;
   ratingLabel: string;
-  starsStyle: string;
   starOutlineStyle: string;
   starFillStyle: string;
   regStarIcon: string;
@@ -79,7 +78,6 @@ class Detail extends HTMLElement {
         nameData: restaurant.name,
         ratingStyle: styles.rating,
         ratingLabel: `star rating ${restaurant.rating} of 5`,
-        starsStyle: styles.stars,
         starOutlineStyle: styles.starOutline,
         starFillStyle: styles.starFill,
         regStarIcon,

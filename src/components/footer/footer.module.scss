@@ -1,14 +1,5 @@
 @use '../../styles/variables' as var;
-
-@keyframes pulse {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(0.7);
-  }
-}
+@use '../../styles/animation';
 
 footer {
   margin-top: 1rem;
@@ -25,7 +16,7 @@ footer {
     color: hsl(0, 100%, 39%);
 
     svg {
-      animation: pulse 0.3s alternate infinite;
+      @include animation.pulse;
     }
   }
 }

@@ -86,6 +86,7 @@ function showErrorMessageElement(
   const paragraphElement = document.createElement('p');
 
   clearAllChild(parentElement);
+  paragraphElement.style.textAlign = 'center';
   if (style) paragraphElement.classList.add(style);
   paragraphElement.innerText = message;
   parentElement?.appendChild(paragraphElement);

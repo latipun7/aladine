@@ -1,14 +1,5 @@
 @use '../../styles/variables' as var;
-
-@keyframes pour {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(45deg);
-  }
-}
+@use '../../styles/animation';
 
 .hero {
   height: 100vh;
@@ -37,33 +28,25 @@
     width: 33%;
     max-height: 45vh;
 
+    @media screen and (min-width: 23.5em) {
+      width: 25%;
+    }
+
+    @media screen and (min-width: 35em) {
+      width: 20%;
+    }
+
+    @media #{var.$screen-tablet} {
+      width: 15%;
+    }
+
     .lamp {
-      width: 80%;
-      margin-bottom: 1rem;
-      animation: 1s infinite alternate pour;
+      @include animation.pour;
     }
 
     .lemonade {
       width: 80%;
       align-self: flex-end;
-    }
-
-    @media screen and (min-width: 23.5em) {
-      & {
-        width: 25%;
-      }
-    }
-
-    @media screen and (min-width: 35em) {
-      & {
-        width: 20%;
-      }
-    }
-
-    @media #{var.$screen-tablet} {
-      & {
-        width: 15%;
-      }
     }
   }
 
@@ -73,43 +56,41 @@
   }
 
   @media #{var.$screen-laptop} {
-    & {
-      display: grid;
-      grid-template-columns: 35% 1fr;
-      grid-template-rows: 4.5rem 25% 1fr;
-      grid-template-areas:
-        ". ."
-        "title image"
-        "pour image";
-      justify-items: center;
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    grid-template-rows: 4.5rem 25% 1fr;
+    grid-template-areas:
+      ". ."
+      "title image"
+      "pour image";
+    justify-items: center;
 
-      h1 {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: translateX(0);
-        font-size: 2.5rem;
-        grid-area: title;
-        align-self: end;
-        margin-left: 15%;
-        padding: 1rem 0;
-        background-color: hsla(0, 0%, 0%, 0.7);
-        width: auto;
-      }
+    h1 {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+      font-size: 2.5rem;
+      grid-area: title;
+      align-self: end;
+      margin-left: 15%;
+      padding: 1rem 0;
+      background-color: hsla(0, 0%, 0%, 0.7);
+      width: auto;
+    }
 
-      .readyToPour {
-        position: relative;
-        top: auto;
-        width: auto;
-        grid-area: pour;
-        align-self: start;
-        margin-top: 3rem;
-      }
+    .readyToPour {
+      position: relative;
+      top: auto;
+      width: auto;
+      grid-area: pour;
+      align-self: start;
+      margin-top: 3rem;
+    }
 
-      & > svg {
-        grid-area: image;
-        height: auto;
-      }
+    & > svg {
+      grid-area: image;
+      height: auto;
     }
   }
 }

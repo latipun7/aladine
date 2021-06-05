@@ -3,7 +3,6 @@
 .this {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -65,32 +64,20 @@
   }
 
   .rating {
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: baseline;
     margin: 1rem;
+    line-height: 1.1;
 
-    .stars {
+    .starOutline {
       color: hsl(29, 100%, 47%);
-      width: 6.5rem;
-      height: 2rem;
-      text-align: start;
+      position: relative;
 
-      .starOutline {
-        position: relative;
-        display: inline;
-        vertical-align: middle;
-
-        .starFill {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          white-space: nowrap;
-          overflow: hidden;
-          width: 0;
-        }
+      .starFill {
+        position: absolute;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
       }
     }
   }
@@ -98,6 +85,7 @@
   .title {
     text-align: center;
     font-size: 1.25rem;
+    font-family: var.$headline-font-family;
     margin: 2rem 1rem 1rem;
     display: block;
   }

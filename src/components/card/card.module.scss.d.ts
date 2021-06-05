@@ -6,7 +6,6 @@ export type Styles = {
   rating: string;
   starFill: string;
   starOutline: string;
-  stars: string;
   this: string;
   title: string;
 };

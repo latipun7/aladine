@@ -5,12 +5,13 @@ export type Styles = {
   flail: string;
   header: string;
   loading: string;
+  pour: string;
+  pulse: string;
   rating: string;
   reviewContainer: string;
   spinAround: string;
   starFill: string;
   starOutline: string;
-  stars: string;
   subtitle: string;
   this: string;
   title: string;

@@ -27,7 +27,6 @@ type HTMLString = {
   nameData: string;
   ratingStyle: string;
   ratingLabel: string;
-  starsStyle: string;
   starOutlineStyle: string;
   starFillStyle: string;
   regStarIcon: string;
@@ -88,7 +87,6 @@ class Card extends HTMLElement {
       nameData: data?.name || '',
       ratingStyle: styles.rating,
       ratingLabel: `star rating ${data?.rating || ''} of 5`,
-      starsStyle: styles.stars,
       starOutlineStyle: styles.starOutline,
       starFillStyle: styles.starFill,
       regStarIcon,

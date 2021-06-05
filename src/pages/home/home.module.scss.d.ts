@@ -2,6 +2,8 @@ export type Styles = {
   gridContainer: string;
   isLoading: string;
   loading: string;
+  pour: string;
+  pulse: string;
   spinAround: string;
 };
 

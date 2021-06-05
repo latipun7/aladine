@@ -34,12 +34,10 @@
   }
 
   @media #{var.$screen-laptop} {
-    & {
-      bottom: 2rem;
+    bottom: 2rem;
 
-      &.bottom {
-        bottom: 9rem;
-      }
+    &.bottom {
+      bottom: 9rem;
     }
   }
 }

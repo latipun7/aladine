@@ -22,8 +22,6 @@ main {
   }
 
   .loading {
-    @include animation.loader;
-    height: 3rem;
-    width: 3rem;
+    @include animation.loading;
   }
 }

@@ -19,26 +19,20 @@
   transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out,
     bottom 0.25s ease-in-out;
 
+  @media #{var.$screen-tablet} {
+    right: 2rem;
+  }
+
+  @media #{var.$screen-laptop} {
+    right: 3rem;
+  }
+
   &:hover {
     background-color: darken(var.$primary-color, 5%);
     box-shadow: 0 0 1px 1px var.$shadow-color;
   }
 
   .loading {
-    @include animation.loader;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  @media #{var.$screen-tablet} {
-    & {
-      right: 2rem;
-    }
-  }
-
-  @media #{var.$screen-laptop} {
-    & {
-      right: 3rem;
-    }
+    @include animation.loading(1.5rem, 1.5rem);
   }
 }

@@ -9,18 +9,16 @@
     <span style="color: #891818" class="icon">{{mapMarkerIcon}}</span>
     {{cityData}}
   </p>
-  <span class="{{ratingStyle}}" title="{{ratingLabel}}">
-    <span class="{{starsStyle}}">
-      <span class="{{starOutlineStyle}}">
-        <span class="{{starFillStyle}}">
-          {{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}
-        </span>
-        {{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}
+  <div class="{{ratingStyle}}" title="{{ratingLabel}}">
+    <span class="{{starOutlineStyle}}">
+      <span class="{{starFillStyle}}">
+        {{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}{{regStarIcon}}
       </span>
+      {{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}{{starIcon}}
     </span>
     <span class="screenreader-text">{{ratingLabel}}</span>
-    <span aria-hidden="true">{{ratingData}}</span>
-  </span>
+    <span aria-hidden="true">&nbsp;{{ratingData}}</span>
+  </div>
   <details>
     <summary>Description</summary>
     {{descriptionData}}

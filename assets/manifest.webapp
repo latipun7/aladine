@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
-  "name": "à la Dine",
-  "description": "Dine in the restaurant made easy 🍽😋",
+  "version": "1.0",
+  "name": "à La Dine",
+  "description": "Dine away the easy way 🍽😋",
   "icons": {
     "60": "firefox_app_60x60.png",
     "128": "firefox_app_128x128.png",

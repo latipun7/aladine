@@ -1,12 +1,12 @@
 {
-  "name": "à la Dine",
-  "short_name": "à la Dine",
-  "description": "Dine in the restaurant made easy 🍽😋",
+  "name": "à La Dine",
+  "short_name": "à La Dine",
+  "description": "Dine away the easy way 🍽😋",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "/",
+  "start_url": "https://latipun7.github.io/aladine/",
   "background_color": "#eaeaea",
   "theme_color": "#08d9d6",
   "icons": [

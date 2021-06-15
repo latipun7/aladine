@@ -40,6 +40,7 @@ jobs:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
             ${{ github.workspace }}/node_modules/.cache
+            ~/.cache/ms-playwright
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Dependencies ✨
@@ -52,7 +53,7 @@ jobs:
         run: yarn format
 
       - name: Run Test 🛠
-        run: yarn test
+        run: yarn test:all
 
       - name: Run Build ⚙
         run: yarn build

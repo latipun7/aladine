@@ -116,3 +116,14 @@ export async function deleteFromStore(
     throw handleError(error);
   }
 }
+
+export async function clearStore(store: StoreNames<AladineDB>) {
+  try {
+    const db = await openDBStore();
+    const tx = db.transaction(store, 'readwrite');
+
+    return await tx.store.clear();
+  } catch (error) {
+    throw handleError(error);
+  }
+}

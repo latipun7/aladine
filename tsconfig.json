@@ -20,6 +20,7 @@
       "lib/*": ["src/lib/*"],
       "pages/*": ["src/pages/*"],
       "styles/*": ["src/styles/*"],
+      "test.utils": ["tests/test.utils.ts"],
       "utils": ["src/lib/aladine-utils.ts"]
     },
     "typeRoots": ["./node_modules/@types", "./typings"],
@@ -35,10 +36,10 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*",
     "configs/**/*",
-    "typings/**/*",
+    "src/**/*",
     "tests/**/*",
+    "typings/**/*",
     "**/*.config.ts"
   ]
 }

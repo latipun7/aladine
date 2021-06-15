@@ -35,6 +35,10 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
+  "files": [
+    "node_modules/expect-playwright/global.d.ts",
+    "node_modules/jest-playwright-preset/types/global.d.ts"
+  ],
   "include": [
     "configs/**/*",
     "src/**/*",

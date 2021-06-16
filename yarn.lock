@@ -4485,6 +4485,13 @@ create-require@^1.1.0:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
 cross-spawn@^6.0.0:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
@@ -4496,7 +4503,7 @@ cross-spawn@^6.0.0:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.0, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
+cross-spawn@^7.0.0, cross-spawn@^7.0.1, cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
@@ -5645,11 +5652,6 @@ expand-tilde@^1.2.2:
   integrity sha1-C4HrqJflo9MdHD0QL48BRB5VlEk=
   dependencies:
     os-homedir "^1.0.1"
-
-expect-playwright@^0.2.5:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/expect-playwright/-/expect-playwright-0.2.6.tgz#fb690763ea386c6b88494512119817beb2c61cf1"
-  integrity sha512-zb+0L9ayNPhFm89F0BOQP8yTckETbA33wmWoxcnUY/A0pFsd7e4Tn8YrDsLiMQ7gZX2dD3LQHH9TWSnvEJi8rw==
 
 expect-playwright@^0.4.0, expect-playwright@^0.4.1:
   version "0.4.1"
@@ -7478,15 +7480,7 @@ jest-mock@^27.0.3:
     "@jest/types" "^27.0.2"
     "@types/node" "*"
 
-jest-playwright-jsdom@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/jest-playwright-jsdom/-/jest-playwright-jsdom-0.0.4.tgz#725f36491b866ff221659dd0bc5a3bfa3629a4a3"
-  integrity sha512-5pYNvJl1DldddO/Oq+Yu8IIEL04E9sLwnnYdGy4S00eL8O/iFvWVPpqJFlmXyTlEYlt/1i96cOJujPqdKRbtTw==
-  dependencies:
-    expect-playwright "^0.2.5"
-    jest-playwright-preset "^1.2.1"
-
-jest-playwright-preset@^1.2.1, jest-playwright-preset@^1.6.1:
+jest-playwright-preset@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/jest-playwright-preset/-/jest-playwright-preset-1.6.1.tgz#1f01339f7c9ccfb3bb356ca67d073e790d4470e4"
   integrity sha512-paWczD9R6dQ9c+XGL0PrLGEyGT0It32POFzvflXLNaJs469BmgO1zScgg2vzd2Agao9oOQpDg/0u1XvxWZvrzg==

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": false,
+    "checkJs": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "CommonJS",
     "noEmit": true,
@@ -44,6 +44,6 @@
     "src/**/*",
     "tests/**/*",
     "typings/**/*",
-    "**/*.config.ts"
+    "**/*.config.*"
   ]
 }

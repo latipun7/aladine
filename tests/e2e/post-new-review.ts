@@ -13,7 +13,9 @@ describe('Scenario for posting new review', () => {
     await page.fill('id=review', 'This is great! 👍');
 
     await page.click('[type=submit]');
-    await page.waitForTimeout(3000);
+
+    await page.click('a:has-text("Home")');
+    await page.click('a:has-text("Pangsit Express")');
 
     await expect(page).toHaveSelectorCount(
       'detail-review',
@@ -21,7 +23,7 @@ describe('Scenario for posting new review', () => {
     );
   });
 
-  test('empty one of form input, should cannot post new review', async () => {
+  test('empty name input, should cannot post new review', async () => {
     const initialReviews = await page.$$('detail-review');
     const initialReviewsCount = initialReviews.length;
 
@@ -30,18 +32,28 @@ describe('Scenario for posting new review', () => {
     await page.fill('id=review', 'This is great! 👍');
 
     await page.click('[type=submit]');
-    await page.waitForTimeout(3000);
+
+    await page.goto('http://localhost:8080');
+    await page.click('a:has-text("Pangsit Express")');
 
     await expect(page).not.toHaveSelectorCount(
       'detail-review',
       initialReviewsCount + 1
     );
+  });
+
+  test('empty review input, should cannot post new review', async () => {
+    const initialReviews = await page.$$('detail-review');
+    const initialReviewsCount = initialReviews.length;
+
+    await page.click('[title="Add Review"]');
 
     await page.fill('id=name', 'Latipun');
-    await page.fill('id=review', '');
 
     await page.click('[type=submit]');
-    await page.waitForTimeout(3000);
+
+    await page.goto('http://localhost:8080');
+    await page.click('a:has-text("Pangsit Express")');
 
     await expect(page).not.toHaveSelectorCount(
       'detail-review',

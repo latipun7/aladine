@@ -43,6 +43,7 @@ const prod = async (): Promise<Configuration> => ({
     minimizer: [new CssMinimizerPlugin(), '...'],
     splitChunks: {
       chunks: 'all',
+      maxSize: 85000,
     },
   },
   plugins: [

@@ -1,4 +1,5 @@
 import purgeCss from '@fullhuman/postcss-purgecss';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import cssnano from 'cssnano';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
@@ -9,7 +10,7 @@ import { EnvironmentPlugin } from 'webpack';
 import type { Configuration } from 'webpack';
 
 import AppConfig from './app.config';
-import { buildDir, srcDir } from './paths';
+import { buildDir, publicDir, resolvePath, srcDir } from './paths';
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -45,17 +46,37 @@ const prod = async (): Promise<Configuration> => ({
     },
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name]-[contenthash:8].css',
+    }),
     new EnvironmentPlugin({
       NODE_ENV: 'production',
+      JEST_TEST: null,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: publicDir,
+          globOptions: {
+            ignore: ['mockServiceWorker.js', 'webcomponents-loader.js'],
+          },
+          to: buildDir,
+        },
+        {
+          context: 'node_modules/@webcomponents/webcomponentsjs',
+          from: '**/*.js',
+          globOptions: {
+            ignore: ['**/src/**/*'],
+          },
+          to: buildDir,
+        },
+      ],
     }),
     new ForkTsCheckerWebpackPlugin({
       eslint: {
         files: './src/**/*.{ts,tsx,js,jsx}',
         options: { cache: false },
       },
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name]-[contenthash:8].css',
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
@@ -66,7 +87,7 @@ const prod = async (): Promise<Configuration> => ({
     rules: [
       {
         test: /\.tsx?$/,
-        include: [srcDir],
+        include: [srcDir, resolvePath('tests')],
         use: [babelLoader],
       },
       {

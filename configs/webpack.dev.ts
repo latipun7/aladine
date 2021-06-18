@@ -1,10 +1,12 @@
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssPresetEnv from 'postcss-preset-env';
+import { EnvironmentPlugin } from 'webpack';
 import type { Configuration } from 'webpack';
 
 import AppConfig from './app.config';
-import { buildDir, srcDir, publicDir } from './paths';
+import { buildDir, publicDir, resolvePath, srcDir } from './paths';
 
 const babelLoader = {
   loader: 'babel-loader',
@@ -32,18 +34,27 @@ const dev = async (): Promise<Configuration> => ({
     overlay: { errors: true, warnings: false },
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      issue: { include: { severity: 'warning' } },
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+    }),
+    new EnvironmentPlugin({ JEST_TEST: null }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: publicDir,
+          to: buildDir,
+        },
+      ],
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      issue: { include: { severity: 'warning' } },
     }),
   ],
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        include: [srcDir],
+        include: [srcDir, resolvePath('tests')],
         use: [babelLoader],
       },
       {

@@ -51,11 +51,11 @@ interface Review extends Response {
   customerReviews: CustomerReview[];
 }
 
-type ListResponse = Omit<List, 'founded'>;
-type DetailResponse = Omit<Detail, 'count' | 'founded'>;
-type SearchResponse = Omit<List, 'count' | 'message'>;
-type ReviewResponse = Omit<Review, 'count' | 'founded'>;
+export type ListResponse = Omit<List, 'founded'>;
+export type DetailResponse = Omit<Detail, 'count' | 'founded'>;
+export type ReviewResponse = Omit<Review, 'count' | 'founded'>;
 export type AddCustomerReview = { id: string; name: string; review: string };
+type SearchResponse = Omit<List, 'count' | 'message'>;
 
 class RestaurantAPI {
   axios: AxiosInstance;

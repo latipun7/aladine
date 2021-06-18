@@ -21,9 +21,9 @@
     "test": "jest",
     "test:all": "yarn test && yarn test:e2e",
     "test:e2e": "yarn test:chromium && yarn test:firefox && yarn test:webkit",
-    "test:chromium": "cross-env BROWSER=chromium jest -c ./jest.e2e.config.ts",
-    "test:firefox": "cross-env BROWSER=firefox jest -c ./jest.e2e.config.ts",
-    "test:webkit": "cross-env BROWSER=webkit jest -c ./jest.e2e.config.ts",
+    "test:chromium": "cross-env BROWSER=chromium JEST_TEST=e2e jest -c ./jest.e2e.config.ts",
+    "test:firefox": "cross-env BROWSER=firefox JEST_TEST=e2e jest -c ./jest.e2e.config.ts",
+    "test:webkit": "cross-env BROWSER=webkit JEST_TEST=e2e jest -c ./jest.e2e.config.ts",
     "test:snap": "jest --updateSnapshot",
     "scss-type": "tsm -e default -n none \"src/**/*.module.scss\"",
     "prepare": "husky install",
@@ -88,6 +88,7 @@
     "jest-playwright-preset": "^1.6.1",
     "lint-staged": "^11.0.0",
     "mini-css-extract-plugin": "^1.6.0",
+    "msw": "^0.29.0",
     "playwright": "^1.12.2",
     "postcss": "^8.3.4",
     "postcss-loader": "^6.1.0",
@@ -119,5 +120,8 @@
       "prettier --write"
     ],
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

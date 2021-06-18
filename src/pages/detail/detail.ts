@@ -18,6 +18,7 @@ import styles from './detail.module.scss';
 type HTMLString = Partial<{
   detailContainerStyle: string;
   detailHeaderStyle: string;
+  pictureLowData: string;
   pictureIdData: string;
   pictureNameData: string;
   cityStyle: string;
@@ -63,10 +64,12 @@ class Detail extends HTMLElement {
     try {
       const api = new RestaurantAPI();
       const { restaurant } = await api.getDetail(this.restaurantID);
+      const imageLow = api.pictureLink(restaurant.pictureId);
       const image = api.pictureLink(restaurant.pictureId, 'large');
       const template = parseTemplate<HTMLString>(htmlDetailString, {
         detailContainerStyle: styles.container,
         detailHeaderStyle: styles.header,
+        pictureLowData: imageLow,
         pictureIdData: image,
         pictureNameData: restaurant.name,
         cityStyle: styles.city,

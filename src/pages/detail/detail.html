@@ -1,7 +1,12 @@
 <div class="{{detailContainerStyle}}">
   <div class="{{detailHeaderStyle}}">
     <figure>
-      <img src="{{pictureIdData}}" alt="{{pictureNameData}}" />
+      <img
+        data-lowsrc="{{pictureLowData}}"
+        data-src="{{pictureIdData}}"
+        alt="{{pictureNameData}}"
+        class="lazyload"
+      />
     </figure>
   </div>
   <h1 class="{{titleStyle}}">{{nameData}}</h1>

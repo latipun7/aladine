@@ -9,6 +9,11 @@
   align-items: center;
   background: no-repeat bottom/cover url(../../assets/hero-image_3.jpg?size=320);
 
+  @media #{var.$screen-laptop} {
+    background: no-repeat bottom/cover
+      url(../../assets/hero-image_3.jpg?size=1200);
+  }
+
   h1 {
     position: absolute;
     top: 3.3rem;

@@ -1,6 +1,7 @@
 import mapMarkerIcon from 'assets/icons/map-marker.svg';
 import regStarIcon from 'assets/icons/reg-star.svg';
 import starIcon from 'assets/icons/star.svg';
+import imagePlaceholder from 'assets/360x270.png';
 import RestaurantAPI from 'lib/restaurant-api';
 import Router from 'lib/router';
 import {
@@ -16,6 +17,7 @@ import styles from './card.module.scss';
 type HTMLString = {
   cardContainerStyle: string;
   cardHeaderStyle: string;
+  placeholderImage: string;
   pictureIdData: string;
   pictureNameData: string;
   cityStyle: string;
@@ -76,6 +78,7 @@ class Card extends HTMLElement {
     const template = parseTemplate<HTMLString>(htmlString, {
       cardContainerStyle: styles.container,
       cardHeaderStyle: styles.header,
+      placeholderImage: imagePlaceholder.src,
       pictureIdData: image || '',
       pictureNameData: data?.name || '',
       cityStyle: styles.city,

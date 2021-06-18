@@ -1,7 +1,12 @@
 <div class="{{cardContainerStyle}}">
   <div class="{{cardHeaderStyle}}">
     <figure>
-      <img src="{{pictureIdData}}" alt="{{pictureNameData}}" />
+      <img
+        src="{{placeholderImage}}"
+        data-src="{{pictureIdData}}"
+        alt="{{pictureNameData}}"
+        class="lazyload"
+      />
     </figure>
     <div class="{{cityStyle}}">
       <div class="{{flailStyle}}"></div>

@@ -1,5 +1,5 @@
-import heartOutlineIcon from 'assets/icons/heart.svg';
-import heartFillIcon from 'assets/icons/heart-fill.svg';
+import heartOutlineIcon from 'assets/icons/heart.svg?raw';
+import heartFillIcon from 'assets/icons/heart-fill.svg?raw';
 import { clearAllChild, parseTemplate } from 'utils';
 import {
   addOrUpdateToStore,

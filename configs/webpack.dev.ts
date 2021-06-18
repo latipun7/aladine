@@ -23,6 +23,7 @@ const dev = async (): Promise<Configuration> => ({
     path: buildDir,
     filename: 'scripts/[name].js',
     publicPath: AppConfig.developmentPublicPath,
+    assetModuleFilename: 'assets/[name][ext][query]',
   },
   devServer: {
     hot: true,

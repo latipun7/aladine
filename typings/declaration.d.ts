@@ -19,6 +19,16 @@ declare module '*.svg' {
   export = svg;
 }
 
+declare module '*svg?raw' {
+  const raw: string;
+  export = raw;
+}
+
+declare module '*svg?inline' {
+  const inline: string;
+  export = inline;
+}
+
 declare module '*.png' {
   const content: ResponsiveImageOutput;
   export = content;

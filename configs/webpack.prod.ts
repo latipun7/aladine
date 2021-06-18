@@ -37,13 +37,13 @@ const prod = async (): Promise<Configuration> => ({
     path: buildDir,
     filename: 'scripts/[name]-[contenthash:8].js',
     publicPath: AppConfig.productionPublicPath,
+    assetModuleFilename: 'assets/[contenthash:8][ext][query]',
   },
   optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), '...'],
     splitChunks: {
       chunks: 'all',
-      maxSize: 85000,
     },
   },
   plugins: [

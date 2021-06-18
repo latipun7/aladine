@@ -1,4 +1,4 @@
-import addIcon from 'assets/icons/add-list.svg';
+import addIcon from 'assets/icons/add-list.svg?raw';
 import RestaurantAPI from 'lib/restaurant-api';
 import Router from 'lib/router';
 import { clearAllChild, parseTemplate } from 'utils';

@@ -16,15 +16,20 @@
 
     <!-- FONTS -->
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Paytone+One&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
 
     <%= htmlWebpackPlugin.tags.headTags.filter((tag) => tag.tagName ===
     'link').join('') %>
 
     <!-- Web Components Polyfills -->
-    <script src="<%= webpackConfig.output.publicPath %>webcomponents-loader.js"></script>
+    <script
+      defer
+      src="<%= webpackConfig.output.publicPath %>webcomponents-loader.js"
+    ></script>
 
     <%= htmlWebpackPlugin.tags.headTags.filter((tag) => tag.tagName ===
     'script').join('') %>

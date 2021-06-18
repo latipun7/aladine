@@ -15,14 +15,15 @@ const config: InitialOptionsTsJest = {
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
   moduleNameMapper: {
     '\\.(css|sass|scss)$': 'identity-obj-proxy',
+    '^assets\\/(.*)(?:\\?raw|\\?inline)$': 'src/assets/$1',
     ...tsconfigPaths,
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules', '<rootDir>/dist'],
   transform: {
     ...tsJestPreset.transform,
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    '\\.(svg|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/tests/files.transformer.js',
-    '\\.(html|svg)$': '<rootDir>/tests/html.transformer.js',
+    '\\.(html|svg\\?raw|svg\\?inline)$': '<rootDir>/tests/html.transformer.js',
   },
   transformIgnorePatterns: [
     '/node_modules/',

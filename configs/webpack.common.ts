@@ -1,13 +1,12 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import { GenerateSW } from 'workbox-webpack-plugin';
 import type { Configuration } from 'webpack';
 
 import AppConfig from './app.config';
-import { buildDir, publicDir, resolvePath } from './paths';
+import { resolvePath } from './paths';
 
 const common: Configuration = {
   entry: {
@@ -22,22 +21,6 @@ const common: Configuration = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: publicDir,
-          to: buildDir,
-        },
-        {
-          context: 'node_modules/@webcomponents/webcomponentsjs',
-          from: '**/*.js',
-          globOptions: {
-            ignore: ['**/src/**/*'],
-          },
-          to: buildDir,
-        },
-      ],
-    }),
     new HtmlWebpackPlugin({
       inject: false,
       scriptLoading: 'defer',

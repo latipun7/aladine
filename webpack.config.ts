@@ -1,5 +1,4 @@
-import { customizeArray, mergeWithCustomize } from 'webpack-merge';
-import { CustomizeRule } from 'webpack-merge/dist/types';
+import { mergeWithCustomize } from 'webpack-merge';
 import type { Configuration } from 'webpack';
 import type { ICustomizeOptions } from 'webpack-merge/dist/types';
 
@@ -8,7 +7,20 @@ import devConfig from './configs/webpack.dev';
 import productionConfig from './configs/webpack.prod';
 
 const custom: ICustomizeOptions = {
-  customizeArray: customizeArray({ plugins: CustomizeRule.Prepend }),
+  customizeArray(
+    common: typeof commonConfig['plugins'],
+    merged: Configuration['plugins'],
+    key
+  ) {
+    if (key === 'plugins' && common && merged) {
+      const [cleanPlugin, ...restCommon] = common;
+      const [miniCSSPlugin, ...restMerged] = merged;
+
+      return [cleanPlugin, ...restMerged, ...restCommon, miniCSSPlugin];
+    }
+
+    return undefined;
+  },
 };
 
 interface CLIOptions {

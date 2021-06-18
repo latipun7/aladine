@@ -1,5 +1,7 @@
 import AppConfig from 'configs/app.config';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 /**
  * Truncate long string
  * @param paragraph The long string that want to truncate
@@ -99,8 +101,6 @@ function showErrorMessageElement(
  * @returns publicPath
  */
 function getPublicPath() {
-  const isProduction = process.env.NODE_ENV === 'production';
-
   if (isProduction) {
     return AppConfig.productionPublicPath;
   }
@@ -112,6 +112,7 @@ export {
   calculateStarRatingPercentage,
   clearAllChild,
   isEmpty,
+  isProduction,
   getPublicPath,
   parseTemplate,
   showErrorMessageElement,

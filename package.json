@@ -76,7 +76,7 @@
     "eslint-plugin-jest-playwright": "^0.3.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "expect-playwright": "^0.4.1",
+    "expect-playwright": "^0.7.1",
     "fake-indexeddb": "^3.1.2",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",

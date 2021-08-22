@@ -32,22 +32,22 @@ export type Restaurant = Omit<
   'address' | 'categories' | 'menus' | 'customerReviews'
 >;
 
-interface Response {
+interface RestaurantResponse {
   error: boolean;
   message: string;
   count: number;
   founded: number;
 }
 
-interface List extends Response {
+interface List extends RestaurantResponse {
   restaurants: Restaurant[];
 }
 
-interface Detail extends Response {
+interface Detail extends RestaurantResponse {
   restaurant: RestaurantDetail;
 }
 
-interface Review extends Response {
+interface Review extends RestaurantResponse {
   customerReviews: CustomerReview[];
 }
 
@@ -73,7 +73,7 @@ class RestaurantAPI {
   }
 
   private static handleError(error: unknown) {
-    if (axios.isAxiosError<Response>(error)) {
+    if (axios.isAxiosError<RestaurantResponse>(error)) {
       if (error.response) {
         throw new Error(error.response.data.message);
       }

@@ -32,7 +32,7 @@ jobs:
 
       - name: Get Yarn Cache Directory Path 🐈
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Directories 🧶
         uses: actions/cache@v2.1.6
@@ -44,7 +44,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install Dependencies ✨
-        run: yarn install --frozen-lockfile --check-files
+        run: yarn install --immutable --check-cache
 
       - name: Run Linter 👨🏻‍💻
         run: yarn type-check && yarn lint

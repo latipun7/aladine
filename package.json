@@ -26,8 +26,7 @@
     "test:webkit": "cross-env BROWSER=webkit JEST_TEST=e2e jest -c ./jest.e2e.config.ts",
     "test:snap": "jest --updateSnapshot",
     "scss-type": "tsm -e default -n none \"src/**/*.module.scss\"",
-    "prepare": "husky install",
-    "postinstall": "playwright install-deps"
+    "postinstall": "husky install && playwright install-deps"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.6",
@@ -124,5 +123,6 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "packageManager": "yarn@3.0.1"
 }

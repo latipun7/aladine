@@ -54,7 +54,7 @@
     "@types/postcss-preset-env": "^6.7.2",
     "@types/webpack-bundle-analyzer": "^4.4.0",
     "@types/webpack-dev-server": "^3.11.4",
-    "@types/webpack-env": "^1.16.0",
+    "@types/webpack-env": "^1.16.2",
     "@types/workbox-webpack-plugin": "^5.1.7",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",

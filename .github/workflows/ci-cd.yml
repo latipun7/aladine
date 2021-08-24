@@ -93,17 +93,16 @@ jobs:
           key: ${{ github.sha }}-${{ runner.os }}-${{ matrix.node-version }}
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
         if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
-          branch: gh-pages
-          folder: dist
-          clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.4
         if: github.ref == 'refs/heads/dicoding'
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
-          branch: gh-pages-dicoding
-          folder: dist
-          clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: github-pages-dicoding

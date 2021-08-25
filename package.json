@@ -45,7 +45,7 @@
     "@jest/types": "^27.0.2",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.14.1",
-    "@types/copy-webpack-plugin": "^8.0.0",
+    "@types/copy-webpack-plugin": "^8.0.1",
     "@types/css-minimizer-webpack-plugin": "^3.0.1",
     "@types/cssnano": "^4.0.0",
     "@types/jest": "^26.0.23",

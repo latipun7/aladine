@@ -3590,14 +3590,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/copy-webpack-plugin@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@types/copy-webpack-plugin@npm:8.0.0"
+"@types/copy-webpack-plugin@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "@types/copy-webpack-plugin@npm:8.0.1"
   dependencies:
     "@types/node": "*"
     tapable: ^2.0.0
     webpack: ^5.1.0
-  checksum: ec10d078c9cc1fa36d1fb13418cec4d19cc3d3e5c8cbfcd19fd14cdac0bcf302feb7ff0a4c948f10e08841859c66a8e8e95cf106e7841db5bc6a6e52f717a987
+  checksum: e921a28fca72bf1708d51ffad06ee2a4b80b8de7e748639588681ea1912413b92dbd433627f3b7eb51c14b9254a1d9c13cf037f25ca08a718df005871454a696
   languageName: node
   linkType: hard
 
@@ -4418,7 +4418,7 @@ __metadata:
     "@jest/types": ^27.0.2
     "@testing-library/dom": ^7.31.2
     "@testing-library/jest-dom": ^5.14.1
-    "@types/copy-webpack-plugin": ^8.0.0
+    "@types/copy-webpack-plugin": ^8.0.1
     "@types/css-minimizer-webpack-plugin": ^3.0.1
     "@types/cssnano": ^4.0.0
     "@types/jest": ^26.0.23

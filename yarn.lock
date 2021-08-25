@@ -3613,12 +3613,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cssnano@npm:*, @types/cssnano@npm:^4.0.0":
+"@types/cssnano@npm:*":
   version: 4.0.0
   resolution: "@types/cssnano@npm:4.0.0"
   dependencies:
     postcss: 5 - 7
   checksum: 94f1e42fd6dbe7413b7feb58024a563819e4e868d6e0d6810160b61b2483201ede05ba944f9d6e72ba6a760d43f925e8feda01501eb3a6a789666dc6bd7d8ddb
+  languageName: node
+  linkType: hard
+
+"@types/cssnano@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@types/cssnano@npm:4.0.1"
+  dependencies:
+    postcss: 5 - 7
+  checksum: 183fa4c41d82c32ef4ddd7ead1eabfa911d0c4ecdcbe78d0289167bf83b129fee0c7160c7247f07163579a4b584b92eda664bbf021b14836370e00c0e437ae19
   languageName: node
   linkType: hard
 
@@ -4420,7 +4429,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.14.1
     "@types/copy-webpack-plugin": ^8.0.1
     "@types/css-minimizer-webpack-plugin": ^3.0.1
-    "@types/cssnano": ^4.0.0
+    "@types/cssnano": ^4.0.1
     "@types/jest": ^26.0.23
     "@types/mini-css-extract-plugin": ^1.4.3
     "@types/node": ^15.12.3

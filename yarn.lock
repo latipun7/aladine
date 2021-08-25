@@ -3847,13 +3847,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/postcss-preset-env@npm:^6.7.2":
-  version: 6.7.2
-  resolution: "@types/postcss-preset-env@npm:6.7.2"
+"@types/postcss-preset-env@npm:^6.7.3":
+  version: 6.7.3
+  resolution: "@types/postcss-preset-env@npm:6.7.3"
   dependencies:
     "@types/autoprefixer": ^9.0.0
     postcss: ^7.0.32
-  checksum: a96187864447dc657685c1f71a1eb020951392d85ada165ead17d1faf7540a8d59f0cc530c2b1c1d634a14b3e4f73db70fa8c0a64c59f74309b70f0d1168cd26
+  checksum: 3ac7c96f4599ab1076a8fd96bae52b329971d2437b5a84dde0329ed3d5723a36c637ba24d5aaedad9749e7a55858c2478430bbd0ecc432ebf6f81e5f9c829bfd
   languageName: node
   linkType: hard
 
@@ -4443,7 +4443,7 @@ __metadata:
     "@types/jest": ^26.0.24
     "@types/mini-css-extract-plugin": ^1.4.3
     "@types/node": ^15.12.3
-    "@types/postcss-preset-env": ^6.7.2
+    "@types/postcss-preset-env": ^6.7.3
     "@types/webpack-bundle-analyzer": ^4.4.0
     "@types/webpack-dev-server": ^3.11.4
     "@types/webpack-env": ^1.16.0

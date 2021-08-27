@@ -4019,10 +4019,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/workbox-webpack-plugin@npm:^5.1.7":
-  version: 5.1.7
-  resolution: "@types/workbox-webpack-plugin@npm:5.1.7"
-  checksum: f0926b324aef177cbcbb97cf55cbb7acabcc4b202d30dcd7ce060bc4d64410345ada17eca5146b2e28ee6a7754641e0156e4b1697e75689034993c3a4a1bfd5e
+"@types/workbox-webpack-plugin@npm:^5.1.8":
+  version: 5.1.8
+  resolution: "@types/workbox-webpack-plugin@npm:5.1.8"
+  checksum: 3b70e77ba5d78cf81b442bffde7678de6a0703d6d8cb6de838bb5aa397005b8136868fd07dd3313cdc997bd523e6ae5f962577bb78825288a0e1420685a2bc65
   languageName: node
   linkType: hard
 
@@ -4447,7 +4447,7 @@ __metadata:
     "@types/webpack-bundle-analyzer": ^4.4.1
     "@types/webpack-dev-server": ^3.11.4
     "@types/webpack-env": ^1.16.0
-    "@types/workbox-webpack-plugin": ^5.1.7
+    "@types/workbox-webpack-plugin": ^5.1.8
     "@webcomponents/webcomponentsjs": ^2.5.0
     axios: ^0.21.1
     babel-jest: ^27.0.2

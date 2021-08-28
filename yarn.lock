@@ -4478,7 +4478,7 @@ __metadata:
     jest-playwright-preset: ^1.6.1
     lazysizes: ^5.3.2
     lint-staged: ^11.0.0
-    mini-css-extract-plugin: ^1.6.0
+    mini-css-extract-plugin: ^1.6.2
     msw: ^0.29.0
     navigo: ^8.11.1
     playwright: ^1.12.2
@@ -11635,16 +11635,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "mini-css-extract-plugin@npm:1.6.0"
+"mini-css-extract-plugin@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "mini-css-extract-plugin@npm:1.6.2"
   dependencies:
     loader-utils: ^2.0.0
     schema-utils: ^3.0.0
     webpack-sources: ^1.1.0
   peerDependencies:
     webpack: ^4.4.0 || ^5.0.0
-  checksum: 04f7c47c18aae7aab9a586ed99dc80255106448403c9c4f80c4b6e647cfc3ea09e2c4fe5cc15a3463be6a1281c2266158beab6a9b81c84f126714e1e995bf6d3
+  checksum: c2c1f3d7e5bc206b5bece0f37b65467ee58e0bb0b61d5e031bb818682b02db2552b296f5018af9058b18eb7127e00f6462fb718712a3d4432079dfa848b510cc
   languageName: node
   linkType: hard
 

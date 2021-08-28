@@ -4371,10 +4371,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@webcomponents/webcomponentsjs@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "@webcomponents/webcomponentsjs@npm:2.5.0"
-  checksum: 06ba1b43565e9cd5e9fff2eb8fe04fdc9e0c60228a13462d191d861ffe122715d549e997d19b7e7a121a4f52acd5943ab9c36e0308b27e417be8c19f4f476f1c
+"@webcomponents/webcomponentsjs@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@webcomponents/webcomponentsjs@npm:2.6.0"
+  checksum: b1325d7ce201644890e666b723c33cd759c3286fe222962073a4652fa671ad07a8a6797303411440b7ad21a65399373dd9a4a920f6cefe758fa98cbc71e704b5
   languageName: node
   linkType: hard
 
@@ -4448,7 +4448,7 @@ __metadata:
     "@types/webpack-dev-server": ^3.11.4
     "@types/webpack-env": ^1.16.0
     "@types/workbox-webpack-plugin": ^5.1.8
-    "@webcomponents/webcomponentsjs": ^2.5.0
+    "@webcomponents/webcomponentsjs": ^2.6.0
     axios: ^0.21.1
     babel-jest: ^27.0.2
     babel-loader: ^8.2.2

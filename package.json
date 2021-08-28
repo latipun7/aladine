@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.6",
-    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
     "axios": "^0.21.1",
     "core-js": "^3.16.2",
     "idb": "^6.1.2",

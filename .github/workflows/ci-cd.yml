@@ -98,6 +98,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          cname: aladine.latipun.dev
 
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/dicoding'

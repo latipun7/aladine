@@ -4464,7 +4464,7 @@ __metadata:
     eslint-config-ruppy-node: ^2.1.1
     eslint-config-ruppy-ts: ^2.0.0
     eslint-plugin-jest-playwright: ^0.3.3
-    expect-playwright: ^0.4.1
+    expect-playwright: ^0.8.0
     fake-indexeddb: ^3.1.3
     favicons: ^6.2.2
     favicons-webpack-plugin: ^5.0.2
@@ -7953,12 +7953,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expect-playwright@npm:^0.4.0, expect-playwright@npm:^0.4.1":
+"expect-playwright@npm:^0.4.0":
   version: 0.4.1
   resolution: "expect-playwright@npm:0.4.1"
   peerDependencies:
     playwright-core: ^1.12.0
   checksum: b340ab9a8ad51e4e72db4e4b69d961781d26884d695b13cf546a251c233501cea85de06b202ed3e58582d68a311e7a32659916e7005c66f186d526d1d61548bc
+  languageName: node
+  linkType: hard
+
+"expect-playwright@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "expect-playwright@npm:0.8.0"
+  checksum: d9e8f0529527020524f2e27f454bdbee042df0c3b1e32f0902513d7c8cac927d87bd5b7cd835c8cc08776a4f61a8fd9adfde22a3390f253846a4c3422c415110
   languageName: node
   linkType: hard
 

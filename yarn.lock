@@ -4463,7 +4463,7 @@ __metadata:
     eslint-config-ruppy-jest: ^2.0.0
     eslint-config-ruppy-node: ^2.1.1
     eslint-config-ruppy-ts: ^2.0.0
-    eslint-plugin-jest-playwright: ^0.3.3
+    eslint-plugin-jest-playwright: ^0.4.1
     expect-playwright: ^0.8.0
     fake-indexeddb: ^3.1.3
     favicons: ^6.2.2
@@ -7613,29 +7613,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest-playwright@npm:^0.3.3":
-  version: 0.3.3
-  resolution: "eslint-plugin-jest-playwright@npm:0.3.3"
+"eslint-plugin-jest-playwright@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "eslint-plugin-jest-playwright@npm:0.4.1"
   dependencies:
-    eslint-plugin-jest: ^24.3.6
-  peerDependencies:
-    eslint: ">=5"
-  checksum: ec78358f10eb27e68c7cafa0b1488b42af00a3da30bbbc5efe4276610715d0149fcc4f72bd878fe06a5007f05aa706f6ca8b99417a6f7247031c38710859c4a7
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-jest@npm:^24.3.6":
-  version: 24.3.6
-  resolution: "eslint-plugin-jest@npm:24.3.6"
-  dependencies:
-    "@typescript-eslint/experimental-utils": ^4.0.1
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">= 4"
-    eslint: ">=5"
-  peerDependenciesMeta:
-    "@typescript-eslint/eslint-plugin":
-      optional: true
-  checksum: 233e6055b167a58ba2e58cf60dc9ce8a4b065d859abe551cf0029d3d6694aaa4a0cfd3b489dfa7442fffb5f40fc7bc0dc322068dd652d08534d1f5c17c7721a8
+    eslint-plugin-playwright: ^0.4.0
+  checksum: d47c7a95c65bffdca950171aa9106b88e76a0ba5737ae4b45cc46867de282755fd455d294f292bc5cbff9196d7961bd301e91627e6f8212da41f3e44d201c989
   languageName: node
   linkType: hard
 
@@ -7667,6 +7650,19 @@ __metadata:
   peerDependencies:
     eslint: ">=5.16.0"
   checksum: 5804c4f8a6e721f183ef31d46fbe3b4e1265832f352810060e0502aeac7de034df83352fc88643b19641bb2163f2587f1bd4119aff0fd21e8d98c57c450e013b
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-playwright@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "eslint-plugin-playwright@npm:0.4.0"
+  peerDependencies:
+    eslint: ">=7"
+    eslint-plugin-jest: ">=24"
+  peerDependenciesMeta:
+    eslint-plugin-jest:
+      optional: true
+  checksum: 7450decdafe74bd0384d6b24dfd27f49b623ccd1f8ece795c32c04056acef4f9be0c5a16e1ce9720fe2a44caccd328d96e5648aa564040bcbdb0777948f48568
   languageName: node
   linkType: hard
 

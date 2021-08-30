@@ -68,7 +68,7 @@
     "eslint-config-ruppy-jest": "^2.0.0",
     "eslint-config-ruppy-node": "^2.1.1",
     "eslint-config-ruppy-ts": "^2.0.0",
-    "eslint-plugin-jest-playwright": "^0.3.3",
+    "eslint-plugin-jest-playwright": "^0.4.1",
     "expect-playwright": "^0.8.0",
     "fake-indexeddb": "^3.1.3",
     "favicons": "^6.2.2",

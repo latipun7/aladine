@@ -4453,7 +4453,7 @@ __metadata:
     babel-jest: ^27.0.2
     babel-loader: ^8.2.2
     clean-webpack-plugin: ^4.0.0-alpha.0
-    copy-webpack-plugin: ^9.0.0
+    copy-webpack-plugin: ^9.0.1
     core-js: ^3.16.2
     cross-env: ^7.0.3
     css-loader: ^5.2.7
@@ -6258,9 +6258,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"copy-webpack-plugin@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "copy-webpack-plugin@npm:9.0.0"
+"copy-webpack-plugin@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "copy-webpack-plugin@npm:9.0.1"
   dependencies:
     fast-glob: ^3.2.5
     glob-parent: ^6.0.0
@@ -6268,10 +6268,10 @@ __metadata:
     normalize-path: ^3.0.0
     p-limit: ^3.1.0
     schema-utils: ^3.0.0
-    serialize-javascript: ^5.0.1
+    serialize-javascript: ^6.0.0
   peerDependencies:
     webpack: ^5.1.0
-  checksum: f3ca9d206b4fcf7860e63afdaf3c3b24ffc0983f2584df7f0e4c98d57b538dfcee4a75333156a22e9a0afcba2acce6796a15f957ce6595d3997df7992ffce574
+  checksum: f3e69883e173f9a298b63dcf35ba5aafc02e252c67c236029424af19fb2e36fc93de94054bd7a9ada8b4cbcc4e96e9a3a269f972e4a45f4fd1b32a3d199d2cae
   languageName: node
   linkType: hard
 

@@ -4475,7 +4475,7 @@ __metadata:
     idb: ^6.1.3
     identity-obj-proxy: ^3.0.0
     jest: ^27.0.4
-    jest-playwright-preset: ^1.6.1
+    jest-playwright-preset: ^1.7.0
     lazysizes: ^5.3.2
     lint-staged: ^11.0.0
     mini-css-extract-plugin: ^1.6.2
@@ -7949,12 +7949,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expect-playwright@npm:^0.4.0":
-  version: 0.4.1
-  resolution: "expect-playwright@npm:0.4.1"
-  peerDependencies:
-    playwright-core: ^1.12.0
-  checksum: b340ab9a8ad51e4e72db4e4b69d961781d26884d695b13cf546a251c233501cea85de06b202ed3e58582d68a311e7a32659916e7005c66f186d526d1d61548bc
+"expect-playwright@npm:^0.7.0":
+  version: 0.7.2
+  resolution: "expect-playwright@npm:0.7.2"
+  checksum: 7503700e2695e07be2118372275b793039bd65320db415bb1c07b5987f960cdbf95e13d243deca70259e221461c5510bed4a8c01f9ca4a26c5f8bdcfdb934eec
   languageName: node
   linkType: hard
 
@@ -10451,11 +10449,11 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest-playwright-preset@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "jest-playwright-preset@npm:1.6.1"
+"jest-playwright-preset@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "jest-playwright-preset@npm:1.7.0"
   dependencies:
-    expect-playwright: ^0.4.0
+    expect-playwright: ^0.7.0
     jest-process-manager: ^0.3.1
     nyc: ^15.1.0
     playwright-core: ">=1.2.0"
@@ -10464,9 +10462,9 @@ fsevents@^1.2.7:
   peerDependencies:
     jest: ">=26.6.3"
     jest-circus: ">=26.6.3"
-    jest-environment-node: ">=26.6.2"
+    jest-environment-node: ">=26.6.3"
     jest-runner: ">=26.6.3"
-  checksum: 611d2dd8d080b70fd289a85b60c2787bb4a22b1793c725c5c4d7f83207c3cd8c776794033681343c501a2ef3c4e304777965b38b90affcedc1cc397485a809ae
+  checksum: afb375ca4134c2c9df27339831156883aac4d80adf0494133b6994269289a0760f07d7d7b6c13b787a969e311aebbe0f4af64fe16ecace63cc66fd1c905cad25
   languageName: node
   linkType: hard
 

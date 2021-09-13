@@ -83,7 +83,7 @@
     "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^1.6.2",
     "msw": "^0.29.0",
-    "playwright": "^1.12.2",
+    "playwright": "^1.14.1",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",

@@ -4481,7 +4481,7 @@ __metadata:
     mini-css-extract-plugin: ^1.6.2
     msw: ^0.29.0
     navigo: ^8.11.1
-    playwright: ^1.12.2
+    playwright: ^1.14.1
     postcss: ^8.3.6
     postcss-loader: ^6.1.1
     postcss-preset-env: ^6.7.0
@@ -12910,9 +12910,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.12.2":
-  version: 1.12.2
-  resolution: "playwright@npm:1.12.2"
+"playwright@npm:^1.14.1":
+  version: 1.14.1
+  resolution: "playwright@npm:1.14.1"
   dependencies:
     commander: ^6.1.0
     debug: ^4.1.1
@@ -12930,7 +12930,7 @@ fsevents@^1.2.7:
     yazl: ^2.5.1
   bin:
     playwright: lib/cli/cli.js
-  checksum: 90cff49dfd5681a4dac54e9e043c1e2251b953955829d3148eeca006e8ce2bbc6042cb4412939d8ba4a3038d24ec763ab60cefffe0df159875efcdc499e281ec
+  checksum: fbf0cd58f3d9eed01c2b5332bf388c89474494bff9027191baf27be2d0dba74af0c506b666ddab356e2f697c3df9ce158969d0b335be352a41710ce07db88b20
   languageName: node
   linkType: hard
 

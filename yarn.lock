@@ -4488,7 +4488,7 @@ __metadata:
     html-loader: ^2.1.2
     html-webpack-plugin: ^5.3.2
     husky: ^6.0.0
-    idb: ^6.1.3
+    idb: ^6.1.4
     identity-obj-proxy: ^3.0.0
     jest: ^27.0.4
     jest-playwright-preset: ^1.7.0
@@ -9422,10 +9422,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"idb@npm:^6.1.3":
-  version: 6.1.3
-  resolution: "idb@npm:6.1.3"
-  checksum: d465aeff52467067e99f8c98b8502b6895c14a6e408819e09d689206175d5d098f7669cbd936db68c041faf4ca1491fb5fe4d58ce0e726009ac661ed4af6e762
+"idb@npm:^6.1.4":
+  version: 6.1.4
+  resolution: "idb@npm:6.1.4"
+  checksum: d16a9a27f99b09073ed825a17c07465773dd561bd65a697e8fa8a45def039ea38ac4e9db50f2d2df03ab25aee63eac993b7baa6c13b17ac90a4433abc0ecdeff
   languageName: node
   linkType: hard
 

@@ -4496,7 +4496,7 @@ __metadata:
     eslint-config-ruppy-ts: ^2.0.0
     eslint-plugin-jest-playwright: ^0.4.1
     expect-playwright: ^0.8.0
-    fake-indexeddb: ^3.1.3
+    fake-indexeddb: ^3.1.4
     favicons: ^6.2.2
     favicons-webpack-plugin: ^5.0.2
     fork-ts-checker-webpack-plugin: ^6.3.3
@@ -8160,13 +8160,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fake-indexeddb@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "fake-indexeddb@npm:3.1.3"
+"fake-indexeddb@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "fake-indexeddb@npm:3.1.4"
   dependencies:
     realistic-structured-clone: ^2.0.1
-    setimmediate: ^1.0.5
-  checksum: 40e12f45291abeb49598279418b25a1857319990ca3f7e37ee80389be9fefb1274c91d77d4699b0e0117252f8b606ed32eb896a030044d1fc8d1a1e9aef8070b
+  checksum: bf1026e6a66a984b0675bbed35a895681c4856bead0e97d7b9c3a427c4b72e7989dfadd421b107f0afd9a2446835c9bb6ef69f76105931da3f306a835c468bd5
   languageName: node
   linkType: hard
 
@@ -15121,13 +15120,6 @@ fsevents@^1.2.7:
     is-plain-object: ^2.0.3
     split-string: ^3.0.1
   checksum: 09a4bc72c94641aeae950eb60dc2755943b863780fcc32e441eda964b64df5e3f50603d5ebdd33394ede722528bd55ed43aae26e9df469b4d32e2292b427b601
-  languageName: node
-  linkType: hard
-
-"setimmediate@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "setimmediate@npm:1.0.5"
-  checksum: c9a6f2c5b51a2dabdc0247db9c46460152ffc62ee139f3157440bd48e7c59425093f42719ac1d7931f054f153e2d26cf37dfeb8da17a794a58198a2705e527fd
   languageName: node
   linkType: hard
 

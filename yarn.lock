@@ -4496,7 +4496,7 @@ __metadata:
     eslint-config-ruppy-ts: ^2.0.0
     eslint-plugin-jest-playwright: ^0.4.1
     expect-playwright: ^0.8.0
-    fake-indexeddb: ^3.1.4
+    fake-indexeddb: ^3.1.7
     favicons: ^6.2.2
     favicons-webpack-plugin: ^5.0.2
     fork-ts-checker-webpack-plugin: ^6.3.3
@@ -8204,12 +8204,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fake-indexeddb@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "fake-indexeddb@npm:3.1.4"
+"fake-indexeddb@npm:^3.1.7":
+  version: 3.1.7
+  resolution: "fake-indexeddb@npm:3.1.7"
   dependencies:
     realistic-structured-clone: ^2.0.1
-  checksum: bf1026e6a66a984b0675bbed35a895681c4856bead0e97d7b9c3a427c4b72e7989dfadd421b107f0afd9a2446835c9bb6ef69f76105931da3f306a835c468bd5
+  checksum: bd1663c9e27858de3ce6217721eeb0e802a3910bf521a509caaff509ca8c490efda6842d19de86488c43cf5cf5f55a7fdadcefc5e7d591a0976e606ead5000fd
   languageName: node
   linkType: hard
 

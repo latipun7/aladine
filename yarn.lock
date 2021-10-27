@@ -4508,7 +4508,7 @@ __metadata:
     jest: ^27.0.4
     jest-playwright-preset: ^1.7.0
     lazysizes: ^5.3.2
-    lint-staged: ^11.2.3
+    lint-staged: ^11.2.6
     mini-css-extract-plugin: ^1.6.2
     msw: ^0.35.0
     navigo: ^8.11.1
@@ -11227,9 +11227,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^11.2.3":
-  version: 11.2.3
-  resolution: "lint-staged@npm:11.2.3"
+"lint-staged@npm:^11.2.6":
+  version: 11.2.6
+  resolution: "lint-staged@npm:11.2.6"
   dependencies:
     cli-truncate: 2.1.0
     colorette: ^1.4.0
@@ -11247,7 +11247,7 @@ fsevents@^1.2.7:
     supports-color: 8.1.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: cf3a1612a8cb3790030fb1eaf98071b97be0c71e9ee87f2f65741321974178e9b15b480dac695bb126d2cd8751dd7d72071b13d7ea0e1a97a735d88bd3cc8bb7
+  checksum: b9071621db351c553579bd18df3d80fb753f851c4f1f72db0aaf12e713eab25b6d8a044dab2957817de7da02054a63f7725a49c763aee09295133f0d554f4d3f
   languageName: node
   linkType: hard
 

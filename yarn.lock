@@ -4499,7 +4499,7 @@ __metadata:
     fake-indexeddb: ^3.1.7
     favicons: ^6.2.2
     favicons-webpack-plugin: ^5.0.2
-    fork-ts-checker-webpack-plugin: ^6.3.3
+    fork-ts-checker-webpack-plugin: ^6.4.0
     html-loader: ^2.1.2
     html-webpack-plugin: ^5.3.2
     husky: ^6.0.0
@@ -8556,9 +8556,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^6.3.3":
-  version: 6.3.3
-  resolution: "fork-ts-checker-webpack-plugin@npm:6.3.3"
+"fork-ts-checker-webpack-plugin@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "fork-ts-checker-webpack-plugin@npm:6.4.0"
   dependencies:
     "@babel/code-frame": ^7.8.3
     "@types/json-schema": ^7.0.5
@@ -8573,7 +8573,17 @@ __metadata:
     schema-utils: 2.7.0
     semver: ^7.3.2
     tapable: ^1.0.0
-  checksum: 22bcbf08fc6c1d31daa521e4b59495ee0e4ec51a7e5728dfd4212835f461002a92910b0bc1a1c62cfe569f7b907fdb81875f108ee922113050deca042f06df8d
+  peerDependencies:
+    eslint: ">= 6"
+    typescript: ">= 2.7"
+    vue-template-compiler: "*"
+    webpack: ">= 4"
+  peerDependenciesMeta:
+    eslint:
+      optional: true
+    vue-template-compiler:
+      optional: true
+  checksum: feba541453d4bdeaa743388541e125204789369920909f0152b11cfd1801a75fb2f6c708eae0174c9810ab4334fa21dea761037629440a647046581e7df62b8c
   languageName: node
   linkType: hard
 

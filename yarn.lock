@@ -4494,7 +4494,7 @@ __metadata:
     eslint-config-ruppy-jest: ^2.0.0
     eslint-config-ruppy-node: ^2.1.1
     eslint-config-ruppy-ts: ^2.0.0
-    eslint-plugin-jest-playwright: ^0.4.1
+    eslint-plugin-jest-playwright: ^0.6.0
     expect-playwright: ^0.8.0
     fake-indexeddb: ^3.1.7
     favicons: ^6.2.2
@@ -7701,12 +7701,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest-playwright@npm:^0.4.1":
-  version: 0.4.1
-  resolution: "eslint-plugin-jest-playwright@npm:0.4.1"
+"eslint-plugin-jest-playwright@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "eslint-plugin-jest-playwright@npm:0.6.0"
   dependencies:
-    eslint-plugin-playwright: ^0.4.0
-  checksum: d47c7a95c65bffdca950171aa9106b88e76a0ba5737ae4b45cc46867de282755fd455d294f292bc5cbff9196d7961bd301e91627e6f8212da41f3e44d201c989
+    eslint-plugin-playwright: ^0.6.0
+  checksum: 099806faef021391b7f0de00a0d5e52282b83e8ceb696c1fd55b29d412c4b58c49e1b256599bd301209ab67c52c5061c711b967132e686c72b32492c7d52429b
   languageName: node
   linkType: hard
 
@@ -7741,16 +7741,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-playwright@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "eslint-plugin-playwright@npm:0.4.0"
+"eslint-plugin-playwright@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "eslint-plugin-playwright@npm:0.6.0"
   peerDependencies:
     eslint: ">=7"
     eslint-plugin-jest: ">=24"
   peerDependenciesMeta:
     eslint-plugin-jest:
       optional: true
-  checksum: 7450decdafe74bd0384d6b24dfd27f49b623ccd1f8ece795c32c04056acef4f9be0c5a16e1ce9720fe2a44caccd328d96e5648aa564040bcbdb0777948f48568
+  checksum: 2d27450b5a91e9020499c2116e6dda38cbc165ec9fb1ecf6e7ed4b3dadd06933ec3304309f5955f1709ad8e7093fb7b1c13afbdaf7c11f594433caf256ab925f
   languageName: node
   linkType: hard
 

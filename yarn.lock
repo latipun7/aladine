@@ -3998,16 +3998,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-dev-server@npm:^3.11.4":
-  version: 3.11.4
-  resolution: "@types/webpack-dev-server@npm:3.11.4"
+"@types/webpack-dev-server@npm:^3.11.6":
+  version: 3.11.6
+  resolution: "@types/webpack-dev-server@npm:3.11.6"
   dependencies:
     "@types/connect-history-api-fallback": "*"
     "@types/express": "*"
     "@types/serve-static": "*"
     "@types/webpack": ^4
     http-proxy-middleware: ^1.0.0
-  checksum: 06a3d08737df147bbfd3466ec6b38c7971d80cc6ef410933896b5f96c7cae2d36f4000214e637c4dd73b016e40e0577925aa16083c59367a48753d06dbdd2773
+  checksum: ce801b43593aa84d228d170ec6c2397d40754f138635c5a792d4f85647a59d07250d533299af8c6ea4e83ca7f8ac5feaf7ec03f11ad886faac43f3460b5d3c6e
   languageName: node
   linkType: hard
 
@@ -4476,7 +4476,7 @@ __metadata:
     "@types/node": ^15.12.3
     "@types/postcss-preset-env": ^6.7.3
     "@types/webpack-bundle-analyzer": ^4.4.1
-    "@types/webpack-dev-server": ^3.11.4
+    "@types/webpack-dev-server": ^3.11.6
     "@types/webpack-env": ^1.16.3
     "@types/workbox-webpack-plugin": ^5.1.8
     "@webcomponents/webcomponentsjs": ^2.6.0

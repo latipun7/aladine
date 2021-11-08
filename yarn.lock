@@ -4519,7 +4519,7 @@ __metadata:
     mini-css-extract-plugin: ^1.6.2
     msw: ^0.35.0
     navigo: ^8.11.1
-    playwright: ^1.14.1
+    playwright: ^1.16.3
     postcss: ^8.3.11
     postcss-loader: ^6.1.1
     postcss-preset-env: ^6.7.0
@@ -13105,6 +13105,32 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"playwright-core@npm:=1.16.3":
+  version: 1.16.3
+  resolution: "playwright-core@npm:1.16.3"
+  dependencies:
+    commander: ^8.2.0
+    debug: ^4.1.1
+    extract-zip: ^2.0.1
+    https-proxy-agent: ^5.0.0
+    jpeg-js: ^0.4.2
+    mime: ^2.4.6
+    pngjs: ^5.0.0
+    progress: ^2.0.3
+    proper-lockfile: ^4.1.1
+    proxy-from-env: ^1.1.0
+    rimraf: ^3.0.2
+    socks-proxy-agent: ^6.1.0
+    stack-utils: ^2.0.3
+    ws: ^7.4.6
+    yauzl: ^2.10.0
+    yazl: ^2.5.1
+  bin:
+    playwright: cli.js
+  checksum: b37e5abadb22096f84515fa9307587747a65c2b465b10b0688ae228aff5537eb5faa88ee9d1cd1225ff9270747b6c9b72a76a008cfb670b8df939b078f3d29b9
+  languageName: node
+  linkType: hard
+
 "playwright-core@npm:>=1.2.0":
   version: 1.12.2
   resolution: "playwright-core@npm:1.12.2"
@@ -13129,27 +13155,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.14.1":
-  version: 1.14.1
-  resolution: "playwright@npm:1.14.1"
+"playwright@npm:^1.16.3":
+  version: 1.16.3
+  resolution: "playwright@npm:1.16.3"
   dependencies:
-    commander: ^6.1.0
-    debug: ^4.1.1
-    extract-zip: ^2.0.1
-    https-proxy-agent: ^5.0.0
-    jpeg-js: ^0.4.2
-    mime: ^2.4.6
-    pngjs: ^5.0.0
-    progress: ^2.0.3
-    proper-lockfile: ^4.1.1
-    proxy-from-env: ^1.1.0
-    rimraf: ^3.0.2
-    stack-utils: ^2.0.3
-    ws: ^7.4.6
-    yazl: ^2.5.1
+    playwright-core: =1.16.3
   bin:
-    playwright: lib/cli/cli.js
-  checksum: fbf0cd58f3d9eed01c2b5332bf388c89474494bff9027191baf27be2d0dba74af0c506b666ddab356e2f697c3df9ce158969d0b335be352a41710ce07db88b20
+    playwright: cli.js
+  checksum: c1fe9255e3023195ca94c7a693b8816f9f13ce5901599806ac161df8da193f2bbb016fa452c8f750602845e7ce517129ea639feae0ea182d0ec77e4cb6fc9030
   languageName: node
   linkType: hard
 
@@ -15563,7 +15576,18 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"socks@npm:^2.3.3":
+"socks-proxy-agent@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "socks-proxy-agent@npm:6.1.0"
+  dependencies:
+    agent-base: ^6.0.2
+    debug: ^4.3.1
+    socks: ^2.6.1
+  checksum: 32ea0d62c848b5c246955e8d6c34832fe6cd8c5f3b66f5ace3a9bd7387bafae3e67d96474d41291723ba7135e2da46d65e008a8a35a793dfa5cb0f4ac05429df
+  languageName: node
+  linkType: hard
+
+"socks@npm:^2.3.3, socks@npm:^2.6.1":
   version: 2.6.1
   resolution: "socks@npm:2.6.1"
   dependencies:

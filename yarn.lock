@@ -4534,7 +4534,7 @@ __metadata:
     resolve-url-loader: ^4.0.0
     responsive-loader: ^3.0.0-2
     sass: ^1.42.1
-    sass-loader: ^12.1.0
+    sass-loader: ^12.3.0
     sharp: ^0.28.3
     ts-jest: ^27.0.7
     ts-node: ^10.2.1
@@ -15107,9 +15107,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"sass-loader@npm:^12.1.0":
-  version: 12.1.0
-  resolution: "sass-loader@npm:12.1.0"
+"sass-loader@npm:^12.3.0":
+  version: 12.3.0
+  resolution: "sass-loader@npm:12.3.0"
   dependencies:
     klona: ^2.0.4
     neo-async: ^2.6.2
@@ -15125,7 +15125,7 @@ fsevents@^1.2.7:
       optional: true
     sass:
       optional: true
-  checksum: 69c66ea3482922064f1e907fc204283e5e9cc02eb20b7ab1761d478922f77b3e2c47c8e3c585f771d75ce57bb088b226ae2eb4c736849b29c8727e921a6e0d41
+  checksum: b755e6d5ceddb70d54334b53f70546b4afc9af5f9704cc0e2666894d0568bdaeccb2b07056bd35465c22c51c55e1d790023b32b9aa0977080403036ef6c47b29
   languageName: node
   linkType: hard
 

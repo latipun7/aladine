@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.4.0
 
       - name: Use NodeJS ${{ matrix.node }} 📦
         uses: actions/setup-node@v2.1.5
@@ -83,7 +83,7 @@ jobs:
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2.4.0
 
       - name: Restore build cache ♻️
         uses: actions/cache@v2.1.6

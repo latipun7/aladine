@@ -44,7 +44,7 @@
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@jest/types": "^27.2.5",
     "@testing-library/dom": "^7.31.2",
-    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/jest-dom": "^5.16.1",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/css-minimizer-webpack-plugin": "^3.2.0",
     "@types/cssnano": "^4.0.1",

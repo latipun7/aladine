@@ -60,16 +60,9 @@ type SearchResponse = Omit<List, 'count' | 'message'>;
 class RestaurantAPI {
   axios: AxiosInstance;
 
-  constructor(
-    public baseURL = 'https://restaurant-api.dicoding.dev',
-    public apiKey = '12345'
-  ) {
+  constructor(public baseURL = 'https://restaurant-api.dicoding.dev') {
     this.baseURL = baseURL;
-    this.apiKey = apiKey;
-    this.axios = axios.create({
-      baseURL: this.baseURL,
-      headers: { 'X-Auth-Token': this.apiKey },
-    });
+    this.axios = axios.create({ baseURL: this.baseURL });
   }
 
   private static handleError(error: unknown) {

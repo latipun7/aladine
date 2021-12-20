@@ -63,7 +63,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.7",
     "css-minimizer-webpack-plugin": "^3.2.0",
-    "cssnano": "^5.0.12",
+    "cssnano": "^5.0.14",
     "eslint": "^7.32.0",
     "eslint-config-ruppy-jest": "^2.0.0",
     "eslint-config-ruppy-node": "^2.1.1",

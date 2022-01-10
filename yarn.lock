@@ -4638,7 +4638,7 @@ __metadata:
     mini-css-extract-plugin: ^1.6.2
     msw: ^0.35.0
     navigo: ^8.11.1
-    playwright: ^1.16.3
+    playwright: ^1.17.2
     postcss: ^8.4.5
     postcss-loader: ^6.2.1
     postcss-preset-env: ^6.7.0
@@ -13653,9 +13653,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:=1.16.3":
-  version: 1.16.3
-  resolution: "playwright-core@npm:1.16.3"
+"playwright-core@npm:=1.17.2":
+  version: 1.17.2
+  resolution: "playwright-core@npm:1.17.2"
   dependencies:
     commander: ^8.2.0
     debug: ^4.1.1
@@ -13675,7 +13675,7 @@ fsevents@^1.2.7:
     yazl: ^2.5.1
   bin:
     playwright: cli.js
-  checksum: b37e5abadb22096f84515fa9307587747a65c2b465b10b0688ae228aff5537eb5faa88ee9d1cd1225ff9270747b6c9b72a76a008cfb670b8df939b078f3d29b9
+  checksum: d7d648eebd2529acecae3d1fa09fbb96b0101f26a33a4109ac70073c686cde7ad49706fcc65d610e30a945c17c9aa5b15d0f190fd64bc001dd08a80f38dafd3a
   languageName: node
   linkType: hard
 
@@ -13703,14 +13703,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.16.3":
-  version: 1.16.3
-  resolution: "playwright@npm:1.16.3"
+"playwright@npm:^1.17.2":
+  version: 1.17.2
+  resolution: "playwright@npm:1.17.2"
   dependencies:
-    playwright-core: =1.16.3
+    playwright-core: =1.17.2
   bin:
     playwright: cli.js
-  checksum: c1fe9255e3023195ca94c7a693b8816f9f13ce5901599806ac161df8da193f2bbb016fa452c8f750602845e7ce517129ea639feae0ea182d0ec77e4cb6fc9030
+  checksum: 8276273b64325a4f11225883f6625244f378aac7dadb47a073866ee63fd3be8bd880a79f696aa1327ed9c9e0b5c1a539a7bfb5e55d7b28b21f0e3b357c785557
   languageName: node
   linkType: hard
 

@@ -4611,7 +4611,7 @@ __metadata:
     babel-loader: ^8.2.3
     clean-webpack-plugin: ^4.0.0
     copy-webpack-plugin: ^9.1.0
-    core-js: ^3.16.2
+    core-js: ^3.38.1
     cross-env: ^7.0.3
     css-loader: ^5.2.7
     css-minimizer-webpack-plugin: ^3.3.1
@@ -6646,10 +6646,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.16.2":
-  version: 3.16.2
-  resolution: "core-js@npm:3.16.2"
-  checksum: f48b988ab6d144aad1a7c09a73174946f797ec050b4566dee9bf0227560296cdd0f714b37f0ee065303eccf0e7fb8115ccca52ab3e80db12e0dcc20a88219483
+"core-js@npm:^3.38.1":
+  version: 3.38.1
+  resolution: "core-js@npm:3.38.1"
+  checksum: 55703c2f6fcd537e47a5cc83e9dc9884efef61861bbefb4a96a8c95e87956db980ce314628465dd49f14e626c5e633b9e3433f3e4a1f628404a14da420eb2556
   languageName: node
   linkType: hard
 

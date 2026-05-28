@@ -29,7 +29,7 @@
     "postinstall": "husky install && playwright install-deps"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.5",
+    "@babel/runtime": "^7.29.7",
     "@webcomponents/webcomponentsjs": "^2.6.0",
     "axios": "^0.24.0",
     "core-js": "^3.16.2",

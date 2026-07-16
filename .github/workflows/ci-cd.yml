@@ -35,7 +35,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
       - name: Cache Directories 🧶
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@2b250bc32ad02700b996b496c14ac8c2840a2991 # v2.1.8
         with:
           path: |
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
@@ -63,7 +63,7 @@ jobs:
         run: yarn build
 
       - name: Cache build ready to deploy 🚀
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@2b250bc32ad02700b996b496c14ac8c2840a2991 # v2.1.8
         with:
           path: |
             ./dist
@@ -86,7 +86,7 @@ jobs:
         uses: actions/checkout@v2.4.0
 
       - name: Restore build cache ♻️
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@2b250bc32ad02700b996b496c14ac8c2840a2991 # v2.1.8
         with:
           path: |
             ./dist
